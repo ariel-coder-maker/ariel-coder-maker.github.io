@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ariel Dahan</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Montserrat,Arial,Helvetica,sans-serif;color:#13303a;background:#ffffff;line-height:1.55;padding:16px}
+.wrap{max-width:900px;margin:0 auto}
+.hero{background:#003C4B;color:#fff;border-radius:14px;padding:30px 26px;margin-bottom:22px}
+.hero .kicker{color:#FFCF01}
+.hero h1{color:#fff}
+.hero p{color:#dbe8ec}
+h1{font-size:34px;line-height:1.15;margin-bottom:10px;letter-spacing:-.01em}
+h2{font-size:21px;margin:26px 0 10px;color:#003C4B}
+h3{font-size:16px;margin-bottom:4px;color:#003C4B}
+p{margin-bottom:10px;font-size:16px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4E6E78;margin-bottom:8px}
+.lead{font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:4px 0 8px}
+.stat{border-left:4px solid #FFCF01;background:#f3f7f8;padding:10px 12px;border-radius:0 8px 8px 0}
+.stat b{display:block;font-size:22px;color:#003C4B;line-height:1.2}
+.stat span{font-size:13px;color:#4E6E78}
+.card{border:1px solid #d6e2e6;border-radius:10px;padding:16px;background:#f7fafb}
+.card.hi{background:#fff8d6;border-color:#f0dc85}
+.card p{font-size:15px;margin-bottom:6px}
+.tl{border-left:2px solid #d6e2e6;margin-left:6px;padding-left:18px}
+.tl .item{position:relative;margin-bottom:16px}
+.tl .item:before{content:"";position:absolute;left:-25px;top:6px;width:12px;height:12px;border-radius:50%;background:#FFCF01;border:2px solid #003C4B}
+.when{font-size:13px;font-weight:700;color:#4E6E78}
+.tl p{font-size:15px;margin:2px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chip{background:#e6eff2;color:#003C4B;font-size:13px;padding:4px 10px;border-radius:999px}
+.btn{display:inline-block;background:#FFCF01;color:#003C4B;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:8px;margin:6px 8px 0 0;font-size:15px}
+.btn.dark{background:#003C4B;color:#fff}
+.btn.ghost{background:transparent;color:#fff;border:2px solid #FFCF01}
+.small{font-size:13px;color:#4E6E78}
+ul,ol{margin:0 0 10px 22px}li{margin-bottom:5px;font-size:15px}
+a{color:#00677f}
+.num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#FFCF01;color:#003C4B;font-size:12px;font-weight:700;margin-right:6px}
+@media(max-width:520px){h1{font-size:27px}.hero{padding:22px 18px}}
+
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #d6e2e6;margin:-16px -16px 18px;padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+nav .brand{font-weight:700;color:#003C4B;margin-right:auto;font-size:16px}
+nav a{color:#003C4B;text-decoration:none;font-weight:700;font-size:14px;padding:7px 12px;border-radius:999px}
+nav a.on{background:#003C4B;color:#fff}
+nav a.cta{background:#FFCF01;color:#003C4B}
+.page{display:none}.page.on{display:block}
+.banner{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#fff8d6;border:1px solid #f0dc85;border-radius:10px;padding:12px 16px;margin-bottom:16px}
+.banner b{color:#003C4B}
+footer{margin-top:30px;padding-top:12px;border-top:1px solid #d6e2e6;font-size:13px;color:#4E6E78}
+
+form.fb{border:1px solid #d6e2e6;border-radius:12px;padding:18px;background:#f7fafb;margin-top:8px}
+form.fb label{display:block;font-weight:700;font-size:15px;color:#003C4B;margin:14px 0 6px}
+form.fb .hint{font-weight:400;font-size:13px;color:#4E6E78}
+form.fb input[type=text],form.fb input[type=email],form.fb select,form.fb textarea{width:100%;font:inherit;font-size:15px;padding:9px 10px;border:1px solid #b9cbd1;border-radius:8px;background:#fff;color:#13303a}
+form.fb textarea{min-height:70px}
+form.fb .opts label{display:flex;gap:8px;align-items:center;font-weight:400;margin:6px 0;font-size:15px;color:#13303a}
+form.fb .scale{display:flex;gap:8px;flex-wrap:wrap}
+form.fb .scale label{display:flex;align-items:center;gap:4px;font-weight:400;margin:0;border:1px solid #b9cbd1;border-radius:8px;padding:6px 12px;background:#fff}
+form.fb fieldset{border:none;border-top:2px solid #FFCF01;margin-top:20px;padding-top:4px}
+form.fb legend{font-weight:700;color:#003C4B;font-size:17px;padding-right:8px}
+form.fb button{font:inherit;font-weight:700;font-size:16px;background:#003C4B;color:#fff;border:0;border-radius:8px;padding:12px 22px;margin-top:18px;cursor:pointer}
+#fbdone{display:none;background:#e7f6ec;border:1px solid #9fd6b1;border-radius:12px;padding:18px;margin-top:8px}
+#fberr{display:none;color:#a33;margin-top:10px;font-size:14px}
+</style></head>
+<body>
+<nav><span class="brand">Ariel Dahan</span>
+<a href="#" data-p="home" class="on" onclick="return go('home')">Home</a>
+<a href="#" data-p="about" onclick="return go('about')">About</a>
+<a href="#" data-p="aife" class="cta" onclick="return go('aife')">AIFE 2026</a>
+<a href="#" data-p="contact" onclick="return go('contact')">Contact</a></nav>
+<section class="page on" id="p-home"><div class="wrap">
+  <div class="banner"><span><b>At AIFE Bangkok?</b> Slides, the template and the feedback form are here.</span><a class="btn dark" style="margin:0" href="#" onclick="return go('aife')">Workshop materials</a></div>
+  <div class="hero">
+    <div class="kicker">MYP Sciences teacher · AI curriculum systems</div>
+    <h1>Ariel Dahan</h1>
+    <p class="lead">I teach MYP Sciences at Yangon American International School in Myanmar. I also build AI systems that let a school set up its curriculum once, so teachers get their planning time back.</p>
+    <a class="btn" href="mailto:ariel.dahan2332@gmail.com" target="_blank">Email me</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/ariel-dillon-dahan" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>Since 2019</b><span>teaching in China, Thailand, Vietnam and Myanmar</span></div>
+    <div class="stat"><b>MYP 1–5</b><span>Sciences curriculum mapped in one system</span></div>
+    <div class="stat"><b>2 US licences</b><span>Biology and life science, grades 6–12</span></div>
+    <div class="stat"><b>$20 a month</b><span>what the whole system runs on</span></div>
+  </div>
+
+  <h2>What I'm building</h2>
+  <p>My first MYP year came with no materials and four classes to plan. So I stopped prompting a chatbot lesson by lesson and built a system instead. The school goes in once: its structure, calendar, criteria, standards and lab stock. After that, a short request gets a unit, a lesson package or a lab order that already fits the school.</p>
+  <div class="grid">
+    <div class="card"><h3>Curriculum generator</h3><p>Units planned against IB criteria and AERO standards, checked against what's actually in the lab, with every version kept.</p></div>
+    <div class="card"><h3>Lesson packages</h3><p>Slides, worksheets, a teacher manual and lab setup guide, shaped to each teacher's preferences.</p></div>
+    <div class="card"><h3>Lab order list</h3><p>Every practical across five grades cross-checked with stock, so the order form writes itself.</p></div>
+    <div class="card"><h3>Student feedback</h3><p>Anonymised submissions in, grading sheets and personalised feedback worksheets out.</p></div>
+  </div>
+
+  <h2>Speaking</h2>
+  <div class="card hi">
+    <div class="kicker" style="margin-bottom:4px">AIFE Bangkok 2026 · AI Academy</div>
+    <h3>Beyond the AI Lesson Plan: Building an AI-Assisted Curriculum System for Real Classrooms</h3>
+    <p>A one-hour hands-on workshop at NIST International School, Sunday 1 November 2026. Slides, the planning template and the feedback form are on the <a href="#" onclick="return go('aife')">AIFE 2026 page</a>.</p>
+  </div>
+</div></section>
+<section class="page" id="p-about"><div class="wrap">
+  <div class="kicker">About</div>
+  <h1>From the lab to the classroom</h1>
+  <p class="lead">I trained in biomedical science in New York and was headed for medicine. Then I travelled through Asia, started teaching, and didn't go back.</p>
+  <p>That science background still shapes how I teach: inquiry first, real data, real apparatus. It's also why I treat AI output the way I'd treat a lab result. Check it before anyone relies on it.</p>
+
+  <h2>Experience</h2>
+  <div class="tl">
+    <div class="item"><div class="when">2025 – present</div><h3>MYP Sciences Teacher, Yangon American International School</h3><p>Myanmar. MYP 1–3 Integrated Sciences and MYP 4 Sciences. Designed and built the school's AI-assisted curriculum and materials system.</p></div>
+    <div class="item"><div class="when">2024</div><h3>Biology Teacher, True North International School</h3><p>Vietnam (WASC accredited). Grades 8 and 10. Coordinated a cross-department science fair where secondary students mentored primary students.</p></div>
+    <div class="item"><div class="when">2022 – 2023</div><h3>Science and Math Teacher, Alaska Academy</h3><p>Vietnam. Project-based units for every science topic, built around student choice.</p></div>
+    <div class="item"><div class="when">2020 – 2022</div><h3>Math and Science Teacher, Patanadek School</h3><p>Thailand. Turned science concepts into staged performances for school events.</p></div>
+    <div class="item"><div class="when">2019 – 2020</div><h3>English Teacher, i2 International Institute of Education</h3><p>China.</p></div>
+  </div>
+
+  <h2>Education</h2>
+  <div class="grid">
+    <div class="card"><h3>Teacher Preparation Certificate</h3><p>Moreland University · 24 graduate credits</p></div>
+    <div class="card"><h3>Post-baccalaureate Premedical Certificate</h3><p>Keck Graduate Institute, School of Applied Life Sciences · co-authored a master's thesis project with Hologic Diagnostics</p></div>
+    <div class="card"><h3>BS Biomedical Sciences, cum laude</h3><p>University at Buffalo, State University of New York · Sean A. Finelli Scholarship</p></div>
+  </div>
+
+  <h2>Licences and training</h2>
+  <ul>
+    <li>IB MYP Category 1 training</li>
+    <li>Arkansas Professional Educator License: Life Science / Biology, grades 7–12</li>
+    <li>Idaho Standard Instructional Certificate: Biological Science, grades 6–12</li>
+    <li>Praxis Biology content knowledge: 180 / 200</li>
+    <li>Child protection, mental health awareness, suicide prevention, dyslexia awareness</li>
+  </ul>
+
+  <h2>Research background</h2>
+  <p>Genetics research on Parkinson's disease in Drosophila, bio-fermentation and bioengineering lab work, and medical device test platforms.</p>
+
+  <h2>Tools I work with</h2>
+  <div class="chips"><span class="chip">Claude</span><span class="chip">n8n</span><span class="chip">PostgreSQL</span><span class="chip">ManageBac</span><span class="chip">Toddle</span><span class="chip">Google Workspace</span><span class="chip">Project-based learning</span><span class="chip">NGSS / AERO</span></div>
+</div></section>
+<section class="page" id="p-aife"><div class="wrap">
+  <div class="hero">
+    <div class="kicker">AIFE Bangkok 2026 · AI Academy workshop</div>
+    <h1>Beyond the AI Lesson Plan</h1>
+    <p class="lead">Building an AI-assisted curriculum system for real classrooms. Set it up once. Get your time back.</p>
+    <p class="small" style="color:#a9c3cb">Sunday 1 November 2026 · NIST International School, Bangkok</p>
+    <a class="btn" href="#" onclick="return go('aife','fb')">Feedback + get the starter repo</a>
+  </div>
+
+  <h2>Materials</h2>
+  <div class="grid">
+    <div class="card hi"><h3>Planning template</h3><p>The two-page sheet from the session. A blank copy, in case yours got left on the table.</p><a class="btn dark" href="AIFE_2026_planning_template.pdf" target="_blank" rel="noopener">Template (PDF)</a></div>
+    <div class="card"><h3>Slides</h3><p>All 30 slides from the workshop.</p><a class="btn dark" href="AIFE_2026_workshop_slides.pdf" target="_blank" rel="noopener">Slides (PDF)</a></div>
+    <div class="card"><h3>Starter repo · coming soon</h3><p>A bare-bones kit you load into Claude, ChatGPT, Codex or similar. It interviews you about your school and sets the folders up. Sign up with the form below and I'll send it when it's on GitHub.</p></div>
+  </div>
+
+  <h2>The seven parts</h2>
+  <p><span class="num">1</span>School UI &nbsp; <span class="num">2</span>Class library &nbsp; <span class="num">3</span>Curriculum generator &nbsp; <span class="num">4</span>Lesson package generator &nbsp; <span class="num">5</span>Teacher preferences &nbsp; <span class="num">6</span>Lab order list &nbsp; <span class="num">7</span>Student feedback generator</p>
+
+  <h2>What to do on Monday</h2>
+  <ol>
+    <li>Photograph your filled-in template and upload it to your AI tool.</li>
+    <li>Ask it to turn box A into a folder structure for your school.</li>
+    <li>Add one thing at a time: calendar, then criteria, then standards.</li>
+    <li>Ask for one lesson for one class you teach this week. When it misses, fix the stored school info, not the prompt.</li>
+  </ol>
+
+  <h2 id="fb">Feedback and mailing list</h2>
+  <p>Two minutes. Tell me what worked and what to cut. Leave your email only if you want the starter repo or updates.</p>
+  <form class="fb" id="fbform" onsubmit="return sendFb(event)">
+    <fieldset><legend>Feedback</legend>
+    <label>Your role</label>
+    <select name="Role"><option value="">Choose one</option><option>Teacher</option><option>Curriculum coordinator</option><option>School leader</option><option>Tech coach</option><option>Lab or resource manager</option><option>Other</option></select>
+    <label>Which part would you use first?</label>
+    <select name="Part to use first"><option value="">Choose one</option><option>1 School UI</option><option>2 Class library</option><option>3 Curriculum generator</option><option>4 Lesson package generator</option><option>5 Teacher preferences</option><option>6 Lab order list</option><option>7 Student feedback generator</option></select>
+    <label>How useful was the session for your work? <span class="hint">1 = not useful, 5 = very useful</span></label>
+    <div class="scale"><label><input type="radio" name="Usefulness (1-5)" value="1">1</label><label><input type="radio" name="Usefulness (1-5)" value="2">2</label><label><input type="radio" name="Usefulness (1-5)" value="3">3</label><label><input type="radio" name="Usefulness (1-5)" value="4">4</label><label><input type="radio" name="Usefulness (1-5)" value="5">5</label></div>
+    <label>What was most useful?</label><textarea name="Most useful"></textarea>
+    <label>What should I cut or change next time?</label><textarea name="Cut or change"></textarea>
+    <label>What's your biggest hurdle to starting?</label><textarea name="Biggest hurdle"></textarea>
+    </fieldset>
+    <fieldset><legend>Stay in touch <span class="hint">(optional)</span></legend>
+    <div class="opts">
+      <label><input type="checkbox" name="Wants" value="Starter repo when ready"> Send me the starter repo when it's ready</label>
+      <label><input type="checkbox" name="Wants" value="Occasional updates"> Occasional updates on the system</label>
+      <label><input type="checkbox" name="Wants" value="Help setting up at my school"> I'd like help setting this up at my school</label>
+    </div>
+    <label>Name</label><input type="text" name="Name">
+    <label>Email</label><input type="email" name="email">
+    <label>School</label><input type="text" name="School">
+    </fieldset>
+    <button type="submit" id="fbbtn">Send</button>
+    <div id="fberr">That didn't send. Please email your feedback to <a href="mailto:ariel.dahan2332@gmail.com" target="_blank">ariel.dahan2332@gmail.com</a>.</div>
+  </form>
+  <div id="fbdone"><h3>Thank you</h3><p style="margin:0">Got it. If you asked for the starter repo, you'll hear from me when it's on GitHub.</p></div>
+</div></section>
+<section class="page" id="p-contact"><div class="wrap">
+  <div class="kicker">Contact</div>
+  <h1>Get in touch</h1>
+  <p class="lead">Questions about the system, the starter repo, or setting something like this up at your school? Email is quickest.</p>
+  <div class="grid">
+    <div class="card hi"><h3>Email</h3><p><a href="mailto:ariel.dahan2332@gmail.com" target="_blank">ariel.dahan2332@gmail.com</a></p><a class="btn dark" href="mailto:ariel.dahan2332@gmail.com?subject=Hello%20from%20your%20site" target="_blank">Write to me</a></div>
+    <div class="card"><h3>LinkedIn</h3><p>Ariel Dahan</p><a class="btn dark" href="https://www.linkedin.com/in/ariel-dillon-dahan" target="_blank" rel="noopener">Connect</a></div>
+  </div>
+  <h2>Good reasons to write</h2>
+  <ul>
+    <li>You want the starter repo, or my full version for your school</li>
+    <li>You're stuck setting yours up</li>
+    <li>You'd like a workshop like this at your school or conference</li>
+  </ul>
+  <p class="small">Based in Yangon, Myanmar (UTC+6:30). I usually reply within a couple of days.</p>
+</div></section>
+<div class="wrap"><footer>Ariel Dahan · MYP Sciences · Yangon American International School · <a href="mailto:ariel.dahan2332@gmail.com" target="_blank">ariel.dahan2332@gmail.com</a></footer></div>
+<script>
+function go(p,anchor){
+  document.querySelectorAll('.page').forEach(function(s){s.classList.toggle('on',s.id==='p-'+p)});
+  document.querySelectorAll('nav a').forEach(function(a){a.classList.toggle('on',a.dataset.p===p && p!=='aife');});
+  try{ if(location.hash!=='#'+p) history.replaceState(null,'','#'+p); }catch(e){}
+  var t=anchor?document.getElementById(anchor):null;
+  if(t){t.scrollIntoView({behavior:'smooth'})}else{window.scrollTo(0,0)}
+  return false;
+}
+
+function sendFb(e){
+  e.preventDefault();
+  var f=document.getElementById('fbform'),b=document.getElementById('fbbtn'),d={};
+  new FormData(f).forEach(function(v,k){ if(!v) return; d[k]=d[k]?d[k]+', '+v:v; });
+  if(d.Wants && !d.email){ alert('Add your email so I can send you the starter repo.'); return false; }
+  d._subject='AIFE 2026 feedback'+(d.email?' + sign-up':''); d._template='table';
+  b.disabled=true; b.textContent='Sending...';
+  fetch('https://formsubmit.co/ajax/ariel.dahan2332@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+   .then(function(r){ if(!r.ok) throw 0; f.style.display='none'; document.getElementById('fbdone').style.display='block'; })
+   .catch(function(){ b.disabled=false; b.textContent='Send'; document.getElementById('fberr').style.display='block'; });
+  return false;
+}
+
+function fromHash(){ var h=(location.hash||'').slice(1); if(['home','about','aife','contact'].indexOf(h)>=0) go(h); }
+window.addEventListener('hashchange',fromHash); fromHash();
+</script>
+</body></html>
