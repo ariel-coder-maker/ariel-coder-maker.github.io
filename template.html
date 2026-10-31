@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fill in your template</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Montserrat,Arial,Helvetica,sans-serif;color:#13303a;background:#fff;line-height:1.5;padding:16px}
+.wrap{max-width:720px;margin:0 auto}
+.hero{background:#003C4B;color:#fff;border-radius:14px;padding:22px 20px;margin-bottom:18px}
+.hero .k{color:#FFCF01;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.hero h1{font-size:26px;line-height:1.15;margin-bottom:8px}
+.hero p{color:#dbe8ec;font-size:15px}
+h2{font-size:19px;color:#003C4B;margin:24px 0 4px;display:flex;align-items:center;gap:8px}
+.b{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#FFCF01;color:#003C4B;font-size:15px;font-weight:700;flex-shrink:0}
+.lead{color:#4E6E78;font-size:14px;margin-bottom:10px}
+label.q{display:block;font-weight:700;font-size:15px;margin:14px 0 2px}
+.hint{display:block;font-weight:400;color:#4E6E78;font-size:13px}
+textarea,input[type=text]{width:100%;font:inherit;font-size:16px;border:1.5px solid #b9cbd0;border-radius:8px;padding:9px 10px;color:#13303a;background:#fff}
+textarea{min-height:76px;resize:vertical}
+textarea:focus,input:focus{outline:2px solid #FFCF01;border-color:#003C4B}
+.ticks{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.ticks label{display:flex;align-items:center;gap:7px;background:#E8F0F2;border-radius:8px;padding:8px 11px;font-size:15px;cursor:pointer}
+input[type=checkbox]{width:20px;height:20px;accent-color:#003C4B;flex-shrink:0}
+table{width:100%;border-collapse:collapse;margin-top:6px}
+th{font-size:12px;color:#4E6E78;text-align:center;padding:4px}
+th:first-child{text-align:left}
+td{border-bottom:1px solid #d3e0e3;padding:8px 4px;font-size:15px}
+td.c{text-align:center;width:70px}
+.role{background:#E8F0F2;border-radius:10px;padding:10px 12px;margin-top:8px}
+.role label{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;margin-bottom:6px}
+.save{padding:14px 0 6px;margin-top:24px;border-top:1px solid #d3e0e3}
+button{width:100%;font:inherit;font-size:17px;font-weight:700;background:#003C4B;color:#fff;border:0;border-radius:10px;padding:14px;cursor:pointer}
+button:disabled{opacity:.6}
+#msg{font-size:14px;color:#4E6E78;margin-top:8px;min-height:1em}
+.foot{font-size:13px;color:#4E6E78;margin-top:14px}
+a{color:#003C4B}
+</style></head><body><div class="wrap">
+
+<div class="hero">
+  <div class="k">AIFE Bangkok 2026 · Ariel Dahan</div>
+  <h1>Build your school's AI system</h1>
+  <p>Type your answers here, then press <b>Save my PDF</b> at the bottom. You get the same two-page template, filled in, to keep. Rough notes are fine. Skip anything that stumps you.</p>
+</div>
+
+<form id="f" onsubmit="return false">
+
+<h2>My time now</h2>
+<p class="lead">Tick the one for your role, and give an honest guess per week.</p>
+<div class="role"><label><input type="checkbox" name="cb_1_1">Curriculum</label><input type="text" name="time_1_17" placeholder="hours a week"></div>
+<div class="role"><label><input type="checkbox" name="cb_1_2">Budget and resources</label><input type="text" name="time_1_18" placeholder="hours a week"></div>
+<div class="role"><label><input type="checkbox" name="cb_1_3">Planning</label><input type="text" name="time_1_19" placeholder="hours a week"></div>
+<div class="role"><label>Time I'd want back</label><input type="text" name="time_1_20" placeholder="hours a week"></div>
+
+<h2><span class="b">A</span>Your school</h2>
+<p class="lead">What you'd otherwise retype into every prompt. Enter it once and every teacher inherits it.</p>
+<label class="q" for="w_1_8">Terms, weeks per term, period length, lessons per unit</label><textarea id="w_1_8" name="w_1_8"></textarea>
+<label class="q" for="w_1_9">Framework and assessment criteria<span class="hint">e.g. MYP A to D, AP, IGCSE</span></label><textarea id="w_1_9" name="w_1_9"></textarea>
+<label class="q" for="w_1_10">Standards you must show evidence for<span class="hint">e.g. AERO, NGSS, national curriculum</span></label><textarea id="w_1_10" name="w_1_10"></textarea>
+<label class="q" for="w_1_11">Unit and lesson shape your school expects</label><textarea id="w_1_11" name="w_1_11"></textarea>
+<label class="q" for="w_1_12">Where the shared folder would live</label>
+<div class="ticks"><label><input type="checkbox" name="cb_1_4">Google Drive</label><label><input type="checkbox" name="cb_1_5">OneDrive</label><label><input type="checkbox" name="cb_1_6">School network</label><label><input type="checkbox" name="cb_1_7">Other</label></div>
+<textarea id="w_1_12" name="w_1_12" placeholder="Notes" style="margin-top:8px"></textarea>
+
+<h2><span class="b">B</span>What you'd feed it</h2>
+<p class="lead">Your class library and your resource lists. The more real this is, the less the AI invents.</p>
+<label class="q" for="w_1_13">Teaching materials you already have<span class="hint">slides, worksheets, unit plans, textbooks</span></label><textarea id="w_1_13" name="w_1_13"></textarea>
+<label class="q" for="w_1_14">Resource lists that exist, or need making<span class="hint">lab stock, devices, rooms, budget</span></label><textarea id="w_1_14" name="w_1_14"></textarea>
+<label class="q" for="w_1_15">Who keeps the school info and lists up to date?</label><textarea id="w_1_15" name="w_1_15"></textarea>
+<label class="q" for="w_1_16">What must never go in?<span class="hint">e.g. student names, grades, personal data</span></label><textarea id="w_1_16" name="w_1_16"></textarea>
+
+<h2><span class="b">C</span>What you want out</h2>
+<table>
+<tr><th>Part</th><th>Use first</th><th>Later</th></tr>
+<tr><td>1 School UI</td><td class="c"><input type="checkbox" name="cb_2_21" aria-label="School UI, use first"></td><td class="c"><input type="checkbox" name="cb_2_22" aria-label="School UI, later"></td></tr>
+<tr><td>2 Class library</td><td class="c"><input type="checkbox" name="cb_2_23" aria-label="Class library, use first"></td><td class="c"><input type="checkbox" name="cb_2_24" aria-label="Class library, later"></td></tr>
+<tr><td>3 Curriculum generator</td><td class="c"><input type="checkbox" name="cb_2_25" aria-label="Curriculum generator, use first"></td><td class="c"><input type="checkbox" name="cb_2_26" aria-label="Curriculum generator, later"></td></tr>
+<tr><td>4 Lesson package generator</td><td class="c"><input type="checkbox" name="cb_2_27" aria-label="Lesson package generator, use first"></td><td class="c"><input type="checkbox" name="cb_2_28" aria-label="Lesson package generator, later"></td></tr>
+<tr><td>5 Teacher preferences</td><td class="c"><input type="checkbox" name="cb_2_29" aria-label="Teacher preferences, use first"></td><td class="c"><input type="checkbox" name="cb_2_30" aria-label="Teacher preferences, later"></td></tr>
+<tr><td>6 Lab order list</td><td class="c"><input type="checkbox" name="cb_2_31" aria-label="Lab order list, use first"></td><td class="c"><input type="checkbox" name="cb_2_32" aria-label="Lab order list, later"></td></tr>
+<tr><td>7 Student feedback generator</td><td class="c"><input type="checkbox" name="cb_2_33" aria-label="Student feedback generator, use first"></td><td class="c"><input type="checkbox" name="cb_2_34" aria-label="Student feedback generator, later"></td></tr>
+</table>
+<label class="q">Outputs I'd tick</label>
+<div class="ticks"><label><input type="checkbox" name="cb_2_35">Digital</label><label><input type="checkbox" name="cb_2_36">Printout</label><label><input type="checkbox" name="cb_2_37">Cut-outs</label><label><input type="checkbox" name="cb_2_38">Teacher manual</label><label><input type="checkbox" name="cb_2_39">Lab or setup guide</label><label><input type="checkbox" name="cb_2_40">Differentiation scaffolds</label><label><input type="checkbox" name="cb_2_41">Other</label></div>
+<label class="q" for="w_2_57">What my students need on every page<span class="hint">e.g. pencil icon for answers, chunked questions, ESL sentence starters</span></label><textarea id="w_2_57" name="w_2_57"></textarea>
+<label class="q" for="w_2_58">The first thing I'd generate</label><input type="text" id="w_2_58" name="w_2_58">
+
+<h2><span class="b">D</span>Your first month</h2>
+<label class="q" for="wk_2_53">Week 1<span class="hint">Make the folder. Pick your AI.</span></label><textarea id="wk_2_53" name="wk_2_53"></textarea>
+<label class="q" for="wk_2_54">Week 2<span class="hint">Enter the school and one course.</span></label><textarea id="wk_2_54" name="wk_2_54"></textarea>
+<label class="q" for="wk_2_55">Week 3<span class="hint">Generate one unit, approving each step.</span></label><textarea id="wk_2_55" name="wk_2_55"></textarea>
+<label class="q" for="wk_2_56">Week 4<span class="hint">Fix what failed. Share with one colleague.</span></label><textarea id="wk_2_56" name="wk_2_56"></textarea>
+<label class="q" for="w_2_49">The one rule my first output must always pass<span class="hint">if you can't say it in a sentence, the AI can't meet it</span></label><textarea id="w_2_49" name="w_2_49"></textarea>
+<label class="q" for="w_2_50">Who approves it before students see it?</label><textarea id="w_2_50" name="w_2_50"></textarea>
+<label class="q" for="w_2_51">My biggest hurdle at my school<span class="hint">the speed bump most likely to stop this</span></label><textarea id="w_2_51" name="w_2_51"></textarea>
+<label class="q" for="w_2_52">Who could help clear it?<span class="hint">a role at school, or someone in this room</span></label><textarea id="w_2_52" name="w_2_52"></textarea>
+
+<h2>Your setup</h2>
+<label class="q">Main AI</label>
+<div class="ticks"><label><input type="checkbox" name="cb_2_42">Claude</label><label><input type="checkbox" name="cb_2_43">ChatGPT / Codex</label><label><input type="checkbox" name="cb_2_44">Gemini</label><label><input type="checkbox" name="cb_2_45">Other</label></div>
+<label class="q">When the quota runs low</label>
+<div class="ticks"><label><input type="checkbox" name="cb_2_46">Cheap API (e.g. DeepSeek, Qwen)</label><label><input type="checkbox" name="cb_2_47">Free tokens (e.g. NVIDIA)</label><label><input type="checkbox" name="cb_2_48">Wait for the reset</label></div>
+
+<div class="save">
+  <button id="go" type="button">Save my PDF</button>
+  <div id="msg">Your answers stay on this device. Nothing is sent anywhere.</div>
+</div>
+</form>
+
+<p class="foot">Next: email <a href="mailto:ariel.dahan2332@gmail.com">ariel.dahan2332@gmail.com</a> for the starter repo, then give this PDF to your AI agent as your starting point. On a laptop? You can also <a href="AIFE_2026_fillable_template.pdf" download>download the blank fillable PDF</a>.</p>
+</div>
+
+<script src="pdf-lib.min.js"></script>
+<script>
+(function () {
+  var KEY = 'aife-template-v1', f = document.getElementById('f');
+  var els = f.querySelectorAll('input[name], textarea[name]');
+  function load() { try { var d = JSON.parse(localStorage.getItem(KEY) || '{}');
+    els.forEach(function (e) { if (!(e.name in d)) return; if (e.type === 'checkbox') e.checked = !!d[e.name]; else e.value = d[e.name]; }); } catch (x) {} }
+  function store() { try { var d = {}; els.forEach(function (e) { d[e.name] = e.type === 'checkbox' ? e.checked : e.value; });
+    localStorage.setItem(KEY, JSON.stringify(d)); } catch (x) {} }
+  load(); f.addEventListener('input', store); f.addEventListener('change', store);
+
+  var btn = document.getElementById('go'), msg = document.getElementById('msg');
+  btn.addEventListener('click', async function () {
+    btn.disabled = true; msg.textContent = 'Making your PDF...';
+    try {
+      if (!window.PDFLib) throw new Error('PDF tool did not load. Check your connection and try again.');
+      var bytes = await (await fetch('AIFE_2026_fillable_template.pdf')).arrayBuffer();
+      var doc = await PDFLib.PDFDocument.load(bytes), form = doc.getForm();
+      var font = await doc.embedFont(PDFLib.StandardFonts.Helvetica);
+      els.forEach(function (e) {
+        try {
+          if (e.type === 'checkbox') { var cf = form.getCheckBox(e.name).acroField, st = e.checked ? (cf.getOnValue() || PDFLib.PDFName.of('Yes')) : PDFLib.PDFName.of('Off'); cf.dict.set(PDFLib.PDFName.of('V'), st); cf.getWidgets().forEach(function (w) { w.setAppearanceState(st); }); }
+          else { var t = form.getTextField(e.name); var tm = e.name.indexOf('time_') === 0; t.acroField.setDefaultAppearance(tm ? '/Helv 8 Tf 1 g' : '/Helv 9 Tf 0.1 0.1 0.1 rg'); t.setText(e.value.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"').replace(/[\u2013\u2014]/g, '-').replace(/\u2026/g, '...').replace(/[^\x09\x0A\x0D\x20-\x7E\xA0-\xFF]/g, '')); }
+        } catch (x) { console.warn(e.name, x); }
+      });
+      form.updateFieldAppearances(font);
+      var out = await doc.save();
+      var blob = new Blob([out], { type: 'application/pdf' }), url = URL.createObjectURL(blob);
+      var a = document.createElement('a'); a.href = url; a.download = 'My_AI_system_plan.pdf';
+      document.body.appendChild(a); a.click(); a.remove();
+      msg.innerHTML = 'Done. If nothing downloaded, <a href="' + url + '" target="_blank">open your PDF here</a>, then use Share and Save to Files.';
+    } catch (x) { msg.textContent = 'Something went wrong: ' + x.message; }
+    btn.disabled = false;
+  });
+})();
+</script>
+</body></html>
