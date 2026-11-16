@@ -177,7 +177,9 @@
   function buildHots(r) {
     $('hots').innerHTML = '';
     hot('door', r.door, r.door.label, openDoor);
-    r.qs.forEach(function (q, i) { var b = hot('q', q, q.obj, function () { openQ(i); }); b.dataset.q = i; });
+    // biggest first, so a small object inside or beside a big one stays clickable (MYP4 room 3: the bicycle box covered the battery pack)
+    r.qs.map(function (q, i) { return i; }).sort(function (a, b) { return r.qs[b].w * r.qs[b].h - r.qs[a].w * r.qs[a].h; })
+      .forEach(function (i) { var q = r.qs[i]; var b = hot('q', q, q.obj, function () { openQ(i); }); b.dataset.q = i; });
     hot('clue', r.clue, r.clue.label, openClue);      // last, so it sits on top where it overlaps
   }
   function markDone() { document.querySelectorAll('.hot.q').forEach(function (b) { b.classList.toggle('done', !!S.solved[+b.dataset.q]); }); }
@@ -259,7 +261,9 @@
   function openClue() {
     if (S.paused || S.over) return;
     var r = D.rooms[S.room];
-    openPanel('<h3>' + esc(r.clue.label) + '</h3><div class="q">' + esc(r.clue.text) + '</div>');
+    // A clue is a hint, not a question - say so, and say where the questions are (2026-11-16: students clicked the toolbox and thought its question was missing)
+    openPanel('<h3>' + esc(r.clue.label) + ' &middot; clue, not a question</h3><div class="q">' + esc(r.clue.text) + '</div>'
+      + '<p><b>This room’s ' + r.qs.length + ' questions are on:</b> ' + r.qs.map(function (q) { return esc(q.obj); }).join(' &middot; ') + '</p>');
   }
 
   function openDoor() {
