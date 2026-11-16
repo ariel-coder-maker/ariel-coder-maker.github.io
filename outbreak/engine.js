@@ -2,7 +2,7 @@
    Grade content lives in data/<GRADE>.js (window.GAME_DATA). No network calls at play time. */
 (function () {
   'use strict';
-  var ROOM_SECONDS = 300;          // 5:00 per room (was 6:00; the first class finished in 20 min)
+  var ROOM_SECONDS = 240;          // 4:00 per room; the first player turns AT 4:00 (Ariel, 2026-11-16: still ~20 min with 5:00)
   var LOSS_EVERY = 60;             // one team member per full minute late
   var TEAM = 6;
   var PENALTY = 30;              // seconds added for each wrong answer (was 15)
@@ -114,6 +114,9 @@
     S.letterFor = shuffle(word(r).split(''));            // which question gives which letter, new every run
     S.order = r.qs.map(function (q) { return shuffle((q.c || []).map(function (t, idx) { return idx; })); });
     S.lockAt = r.qs.map(function () { return -1e9; });
+    // QUESTION SWAP (2026-11-16): a wrong answer replaces the object's question with a reserve one, so
+    // clicking through the choices never pays. Rooms without reserves fall back to the 30 s lock.
+    S.cur = r.qs.map(function () { return null; }); S.bk = shuffle((r.bk || []).map(function (b, j) { return j; })); S.bkAt = 0;
     document.body.classList.toggle('vault', !!r.vault);
     $('roomImg').src = r.image; $('roomImg').alt = r.name;
     $('roomName').textContent = 'Room ' + (i + 1) + ' of ' + D.rooms.length + ' · ' + r.name;
@@ -130,8 +133,8 @@
   function tick() {
     if (!S || !S.running || S.paused) return;
     var e = elapsed(); paintClock(e);
-    if (e >= ROOM_SECONDS && !S.overtime) { S.overtime = true; document.body.classList.add('overtime'); Snd.setTense(true); toast('Time is up! Every full minute late, one team member turns.', 3500); }
-    var due = e >= ROOM_SECONDS ? Math.floor((e - ROOM_SECONDS) / LOSS_EVERY) : 0;   // first loss at 07:00
+    if (e >= ROOM_SECONDS && !S.overtime) { S.overtime = true; document.body.classList.add('overtime'); Snd.setTense(true); toast('Time is up! One team member turns now, and one more every minute.', 3500); }
+    var due = e >= ROOM_SECONDS ? Math.floor((e - ROOM_SECONDS) / LOSS_EVERY) + 1 : 0;   // first loss AT 4:00, then every minute
     while (S.roomLoss < due && !S.over) { S.roomLoss++; infect(); }
   }
 
@@ -197,7 +200,7 @@
 
   function openQ(i) {
     if (S.paused || S.over) return;
-    var q = D.rooms[S.room].qs[i], ans = answerIndex(q), need = D.rooms[S.room].qs.length;
+    var q0 = D.rooms[S.room].qs[i], q = S.cur[i] ? Object.assign({}, q0, S.cur[i], { t: S.cur[i].t }) : q0, ans = answerIndex(q), need = D.rooms[S.room].qs.length;
     var left = Math.ceil(S.lockAt[i] + LOCK - elapsed());
     if (!S.solved[i] && left > 0) {
       openPanel('<h3>' + esc(q.card || q.obj) + '</h3><div class="q">&#128274; Locked for <b id="lockN">' + left + '</b> more seconds after a wrong answer.</div><p>Use the time: check the lesson it names in your worksheets.</p><div class="fb bad">' + esc(q.hint) + '</div>');
@@ -207,6 +210,16 @@
     var wrongNow = function () {
       Snd.wrong(); S.wrongRoom++; S.penalties++;
       if (S.running) { S.acc += PENALTY; paintClock(elapsed()); }
+      var bank = D.rooms[S.room].bk || [];
+      if (bank.length) {
+        if (S.bkAt >= S.bk.length) { S.bk = shuffle(S.bk); S.bkAt = 0; }
+        var nq = bank[S.bk[S.bkAt++]];
+        S.cur[i] = nq; S.order[i] = shuffle(nq.c.map(function (t, idx) { return idx; }));
+        $('fb').innerHTML = '<div class="fb bad">Not that one. <b>+' + PENALTY + ' seconds</b>. This object now asks a <b>NEW question</b>. Hint for the last one: ' + esc(q.hint) + '</div>';
+        document.querySelectorAll('#ch .choice, #tin, #tgo').forEach(function (x) { x.disabled = true; });
+        setTimeout(function () { if ($('panel').classList.contains('open') && $('fb')) openQ(i); }, 2600);
+        return;
+      }
       S.lockAt[i] = elapsed();
       S.order[i] = shuffle(S.order[i]);
       $('fb').innerHTML = '<div class="fb bad">Not that one. <b>+' + PENALTY + ' seconds</b>, and this question locks for ' + LOCK + ' s. ' + esc(q.hint) + '</div>';

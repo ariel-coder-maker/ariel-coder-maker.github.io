@@ -198,6 +198,44 @@ window.GAME_DATA = {
      "hint": "Where does the book have the most stored energy, and when is it moving fastest?",
      "src": "Lesson 1, Section 2 (Q5)"
     }
+   ],
+   "bk": [
+    {
+     "q": "What does a machine do with energy?",
+     "c": [
+      "Transfers and transforms it; it never creates energy",
+      "Creates new energy",
+      "Destroys energy",
+      "Stores all of it as heat"
+     ],
+     "k": 11,
+     "hint": "Energy is conserved.",
+     "src": "Lesson 1: machines and energy"
+    },
+    {
+     "q": "A 50 N box is pushed 4 m. How much work is done?",
+     "c": [
+      "200 J",
+      "12.5 J",
+      "54 J",
+      "46 J"
+     ],
+     "k": 11,
+     "hint": "work = force × distance.",
+     "src": "Lesson 1: work"
+    },
+    {
+     "q": "A motor does 600 J of work in 20 s. What is its power?",
+     "c": [
+      "30 W",
+      "12 000 W",
+      "580 W",
+      "620 W"
+     ],
+     "k": 11,
+     "hint": "power = work ÷ time.",
+     "src": "Lesson 1: power"
+    }
    ]
   },
   {
@@ -292,6 +330,44 @@ window.GAME_DATA = {
      "k": 48,
      "hint": "A strong conclusion quotes numbers AND gives a scientific reason.",
      "src": "Lesson 4 (Q9–Q10)"
+    }
+   ],
+   "bk": [
+    {
+     "q": "Why does a sharp knife cut better than a blunt one?",
+     "c": [
+      "The same force on a smaller area makes more pressure",
+      "It has more force",
+      "It has a larger area",
+      "It is heavier"
+     ],
+     "k": 11,
+     "hint": "pressure = force ÷ area.",
+     "src": "Lessons 3 and 4: wedges"
+    },
+    {
+     "q": "A 20 N force acts on 4 cm². What is the pressure?",
+     "c": [
+      "5 N/cm²",
+      "80 N/cm²",
+      "24 N/cm²",
+      "16 N/cm²"
+     ],
+     "k": 11,
+     "hint": "Divide the force by the area.",
+     "src": "Lesson 3: pressure"
+    },
+    {
+     "q": "Which unit can you use for pressure?",
+     "c": [
+      "N/cm²",
+      "newtons",
+      "joules",
+      "watts"
+     ],
+     "k": 11,
+     "hint": "Force per area.",
+     "src": "Lesson 3: pressure"
     }
    ]
   },
@@ -388,6 +464,44 @@ window.GAME_DATA = {
      "hint": "A bigger distance means a smaller force for the same moment. Then MA = load ÷ effort.",
      "src": "Lesson 5 and Lesson 8 (Q3)"
     }
+   ],
+   "bk": [
+    {
+     "q": "4 N hangs 10 cm left of a pivot. What force 20 cm to the right balances it?",
+     "c": [
+      "2 N",
+      "8 N",
+      "40 N",
+      "0.5 N"
+     ],
+     "k": 11,
+     "hint": "Clockwise moment = counterclockwise moment.",
+     "src": "Lesson 5: moments"
+    },
+    {
+     "q": "What is the pivot of a lever called?",
+     "c": [
+      "The fulcrum",
+      "The effort",
+      "The load",
+      "The moment"
+     ],
+     "k": 11,
+     "hint": "The point it turns around.",
+     "src": "Lesson 5: parts of a lever"
+    },
+    {
+     "q": "A lever lifts a 600 N load with a 200 N effort. What is its mechanical advantage?",
+     "c": [
+      "3",
+      "0.33",
+      "400",
+      "800"
+     ],
+     "k": 11,
+     "hint": "MA = load ÷ effort.",
+     "src": "Lesson 8: mechanical advantage"
+    }
    ]
   },
   {
@@ -483,6 +597,44 @@ window.GAME_DATA = {
      "hint": "Use the law of conservation of energy.",
      "src": "Lesson 7, Section 5 (Q7)"
     }
+   ],
+   "bk": [
+    {
+     "q": "Why does adding more sections of string to a pulley make lifting easier?",
+     "c": [
+      "The load is shared between more string sections, so less effort is needed",
+      "The load gets lighter",
+      "Friction disappears",
+      "The string gets stronger"
+     ],
+     "k": 11,
+     "hint": "Count the strings holding the load.",
+     "src": "Lesson 6: the broomstick pulley"
+    },
+    {
+     "q": "A lamp uses 100 J and gives out 20 J of light. What is its efficiency?",
+     "c": [
+      "20%",
+      "80%",
+      "120%",
+      "5%"
+     ],
+     "k": 11,
+     "hint": "useful out ÷ total in × 100.",
+     "src": "Lesson 7: efficiency"
+    },
+    {
+     "q": "Where does the wasted energy of a machine usually go?",
+     "c": [
+      "Heat and sound, into the surroundings",
+      "It is destroyed",
+      "Back into the fuel",
+      "Into more useful work"
+     ],
+     "k": 11,
+     "hint": "Rub your hands together.",
+     "src": "Lesson 7: wasted energy"
+    }
    ]
   },
   {
@@ -577,6 +729,44 @@ window.GAME_DATA = {
      "k": 11,
      "hint": "A good improvement must fix the exact limitation you named.",
      "src": "Lesson 10, Section 2 (Q2)"
+    }
+   ],
+   "bk": [
+    {
+     "q": "Which energy resource is non-renewable?",
+     "c": [
+      "Coal",
+      "Wind",
+      "Sunlight",
+      "Flowing water"
+     ],
+     "k": 11,
+     "hint": "Which one will run out?",
+     "src": "Lesson 9: energy resources"
+    },
+    {
+     "q": "Why are fossil fuels called finite?",
+     "c": [
+      "They take millions of years to form, so they will run out",
+      "They are free",
+      "They never run out",
+      "They are made by the wind"
+     ],
+     "k": 11,
+     "hint": "Finite = limited.",
+     "src": "Lesson 9: fossil fuels"
+    },
+    {
+     "q": "You compare two fuels by heating water. Which step keeps it a fair test?",
+     "c": [
+      "Heat the same mass of water for the same time",
+      "Use a different amount of each fuel",
+      "Use different thermometers",
+      "Start the water at different temperatures"
+     ],
+     "k": 11,
+     "hint": "Change only the fuel.",
+     "src": "Lesson 10: fair methods"
     }
    ]
   },
@@ -674,6 +864,44 @@ window.GAME_DATA = {
      "k": 48,
      "hint": "Use the word from the reading for a change that is very hard to undo.",
      "src": "Lesson 16, Part 2 (Q4)"
+    }
+   ],
+   "bk": [
+    {
+     "q": "Which describes sustainable use of a resource?",
+     "c": [
+      "Using it so it can recover for the future",
+      "Using all of it now",
+      "Never using it at all",
+      "Using it faster each year"
+     ],
+     "k": 11,
+     "hint": "Think of the water lilies.",
+     "src": "Lesson 11: sustainability"
+    },
+    {
+     "q": "In the Lever Lab, useful work out was 0.15 J and work in was 0.20 J. What was the efficiency?",
+     "c": [
+      "75%",
+      "133%",
+      "25%",
+      "0.75%"
+     ],
+     "k": 11,
+     "hint": "useful ÷ in × 100.",
+     "src": "Lessons 13–16: the Lever Lab"
+    },
+    {
+     "q": "Why is a more efficient machine better for the planet?",
+     "c": [
+      "It needs less fuel for the same useful work",
+      "It works faster",
+      "It is heavier",
+      "It makes more heat"
+     ],
+     "k": 11,
+     "hint": "Less waste, less fuel.",
+     "src": "Lessons 7 and 11: efficiency and resources"
     }
    ]
   },

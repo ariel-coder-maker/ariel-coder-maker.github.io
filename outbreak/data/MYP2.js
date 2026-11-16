@@ -200,6 +200,44 @@ window.GAME_DATA = {
      "hint": "Look at where the arrows start.",
      "src": "Lesson 1, See–Think–Wonder (Q8–Q9)"
     }
+   ],
+   "bk": [
+    {
+     "q": "Why did your desk measure a different number of hand-spans than your partner’s?",
+     "c": [
+      "Hand-spans are different sizes for different people",
+      "The desk changed length",
+      "Hand-spans are a standard unit",
+      "You must always measure in centimeters"
+     ],
+     "k": 11,
+     "hint": "Body units are not the same for everyone.",
+     "src": "Lesson 1: body units"
+    },
+    {
+     "q": "Which is the SI unit of length?",
+     "c": [
+      "meter",
+      "foot",
+      "hand-span",
+      "mile"
+     ],
+     "k": 11,
+     "hint": "The unit used by scientists everywhere.",
+     "src": "Lesson 1: standard units"
+    },
+    {
+     "q": "Convert 2.5 km into meters.",
+     "c": [
+      "2 500 m",
+      "250 m",
+      "25 m",
+      "25 000 m"
+     ],
+     "k": 11,
+     "hint": "1 km = 1 000 m.",
+     "src": "Lessons 1 and 3: units"
+    }
    ]
   },
   {
@@ -294,6 +332,44 @@ window.GAME_DATA = {
      "k": 11,
      "hint": "First find the speed. Then time = distance ÷ speed.",
      "src": "Lesson 15, Part 2 (Q4)"
+    }
+   ],
+   "bk": [
+    {
+     "q": "A bus travels 120 km in 2 hours. What is its average speed?",
+     "c": [
+      "60 km/h",
+      "240 km/h",
+      "120 km/h",
+      "0.6 km/h"
+     ],
+     "k": 11,
+     "hint": "speed = distance ÷ time.",
+     "src": "Lesson 3: speed"
+    },
+    {
+     "q": "You walk 30 m to the gate and 30 m straight back. What is your displacement?",
+     "c": [
+      "0 m",
+      "60 m",
+      "30 m",
+      "15 m"
+     ],
+     "k": 11,
+     "hint": "Displacement is how far you end up from the start.",
+     "src": "Lesson 3: distance and displacement"
+    },
+    {
+     "q": "Why do we time the walk three times and take the average?",
+     "c": [
+      "To make the result more reliable",
+      "To make the speed faster",
+      "Because the first time is always wrong",
+      "To use more stopwatches"
+     ],
+     "k": 11,
+     "hint": "One reading can have a mistake in it.",
+     "src": "Lesson 4: the 100 m loop"
     }
    ]
   },
@@ -390,6 +466,44 @@ window.GAME_DATA = {
      "hint": "Gradient = change in distance ÷ change in time.",
      "src": "Lesson 5, Section 2 (Q2)"
     }
+   ],
+   "bk": [
+    {
+     "q": "On a distance–time graph, what does a flat (horizontal) line show?",
+     "c": [
+      "The object is not moving",
+      "Constant speed",
+      "Speeding up",
+      "Going backward"
+     ],
+     "k": 11,
+     "hint": "The distance is not changing.",
+     "src": "Lesson 5: journey graphs"
+    },
+    {
+     "q": "Which line on a distance–time graph shows the fastest movement?",
+     "c": [
+      "The steepest line",
+      "The flattest line",
+      "The longest line",
+      "The lowest line"
+     ],
+     "k": 11,
+     "hint": "Steeper = more distance each second.",
+     "src": "Lesson 5: gradient"
+    },
+    {
+     "q": "An object is at 10 m at 0 s and at 40 m at 10 s. What is its speed?",
+     "c": [
+      "3 m/s",
+      "4 m/s",
+      "40 m/s",
+      "10 m/s"
+     ],
+     "k": 11,
+     "hint": "Change in distance ÷ change in time.",
+     "src": "Lesson 5: speed from a graph"
+    }
    ]
   },
   {
@@ -484,6 +598,44 @@ window.GAME_DATA = {
      "k": 11,
      "hint": "Average speed = total distance ÷ total time. Think about the start of the race.",
      "src": "Lesson 16, Part 2 (Q4)"
+    }
+   ],
+   "bk": [
+    {
+     "q": "On a speed–time graph, what does a horizontal line show?",
+     "c": [
+      "Constant speed",
+      "Not moving",
+      "Speeding up",
+      "Slowing down"
+     ],
+     "k": 11,
+     "hint": "The speed is not changing.",
+     "src": "Lessons 6 and 7: speed–time graphs"
+    },
+    {
+     "q": "Why did the napper lose even though its top speed was high?",
+     "c": [
+      "It stopped for a long time, so its average speed was low",
+      "Its top speed was too low",
+      "It ran a shorter distance",
+      "Speed does not matter in a race"
+     ],
+     "k": 11,
+     "hint": "Average speed counts the stopped time too.",
+     "src": "Lessons 6 and 7: the race"
+    },
+    {
+     "q": "A runner goes from 0 to 8 m/s. What is this change called?",
+     "c": [
+      "Acceleration",
+      "Displacement",
+      "Distance",
+      "Deceleration"
+     ],
+     "k": 11,
+     "hint": "Speeding up has a name.",
+     "src": "Lesson 7: acceleration"
     }
    ]
   },
@@ -582,6 +734,44 @@ window.GAME_DATA = {
      "hint": "What do you change on purpose? What do you measure?",
      "src": "Lesson 9, Section 2 (Q2)"
     }
+   ],
+   "bk": [
+    {
+     "q": "A box is pushed with 10 N to the right and 10 N to the left. What happens?",
+     "c": [
+      "The forces are balanced: it does not start moving",
+      "It moves right",
+      "It moves left",
+      "It speeds up"
+     ],
+     "k": 11,
+     "hint": "Equal and opposite forces cancel.",
+     "src": "Lesson 8: balanced forces"
+    },
+    {
+     "q": "Which force slows a book sliding across a table?",
+     "c": [
+      "Friction",
+      "Gravity pulling up",
+      "Magnetism",
+      "Thrust"
+     ],
+     "k": 11,
+     "hint": "It acts where two surfaces rub.",
+     "src": "Lesson 8: friction"
+    },
+    {
+     "q": "A skateboarder pushes backward on the ground and moves forward. Which law explains it?",
+     "c": [
+      "Newton’s third law: every action has an equal and opposite reaction",
+      "Newton’s first law: inertia",
+      "Gravity only",
+      "Friction only"
+     ],
+     "k": 11,
+     "hint": "The ground pushes back on the foot.",
+     "src": "Lesson 9: Newton’s laws"
+    }
    ]
   },
   {
@@ -678,6 +868,44 @@ window.GAME_DATA = {
      "k": 11,
      "hint": "Which metal is more reactive, zinc or iron?",
      "src": "Lesson 15, Part 1 (Q3)"
+    }
+   ],
+   "bk": [
+    {
+     "q": "Salt water is a mixture. How could you get the salt back?",
+     "c": [
+      "Evaporate the water",
+      "Filter it",
+      "Use a magnet",
+      "Freeze it"
+     ],
+     "k": 11,
+     "hint": "The salt is dissolved, so a filter will not catch it.",
+     "src": "Lesson 10: separating mixtures"
+    },
+    {
+     "q": "Which metal is the MOST reactive?",
+     "c": [
+      "Magnesium",
+      "Copper",
+      "Iron",
+      "Zinc"
+     ],
+     "k": 11,
+     "hint": "Look at the top of the reactivity series.",
+     "src": "Lessons 12 and 13: the reactivity series"
+    },
+    {
+     "q": "What is a compound?",
+     "c": [
+      "Two or more elements chemically joined",
+      "A mixture you can separate with a filter",
+      "A single type of atom",
+      "Any metal"
+     ],
+     "k": 11,
+     "hint": "Rust is one: iron joined with oxygen.",
+     "src": "Lesson 10: elements, compounds, mixtures"
     }
    ]
   },
