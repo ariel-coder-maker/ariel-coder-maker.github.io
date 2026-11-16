@@ -134,7 +134,7 @@ window.GAME_DATA = {
      "y": 37,
      "w": 12,
      "h": 43,
-     "q": "In a fair test, what do we call the ONE variable the scientist changes on purpose? (one word)",
+     "q": "In a fair test, what do we call the ONE variable the scientist changes on purpose? (one or two words)",
      "c": [
       "Drop height caused the eggs to break",
       "Egg size caused the eggs to break",
@@ -145,7 +145,7 @@ window.GAME_DATA = {
      "hint": "Count how many things changed between the trials.",
      "src": "Lesson 2, Section 3 (Q9) and Lesson 5",
      "q0": "A group drops eggs from 20, 40 and 60 cm, but uses small eggs at 20 cm and large eggs at 60 cm. Only the 60 cm eggs break. Which conclusion is justified?",
-     "t": "XSJ2aSIsImVsYmFpcmF2IHRuZWRuZXBlZG5pIiwidG5lZG5lcGVkbmkiWw=="
+     "t": "XSJlbGJhaXJhdiB0bmVkbmVwZWRuaSIsInRuZWRuZXBlZG5pIls="
     },
     {
      "obj": "See-saw lever with hanging weights",
@@ -258,8 +258,7 @@ window.GAME_DATA = {
      ],
      "k": 85,
      "hint": "First find the field of view at ×100. It shrinks as the magnification grows. Then divide and convert to µm.",
-     "src": "Lesson 7, Section 2 (Q2)",
-     "t": "XSIwNTEiWw=="
+     "src": "Lesson 7, Section 2 (Q2)"
     },
     {
      "obj": "Silver stopwatch",
@@ -327,7 +326,7 @@ window.GAME_DATA = {
      "y": 59,
      "w": 6.2,
      "h": 10,
-     "q": "An atom has atomic number 13 and mass number 27. How many NEUTRONS does it have?",
+     "q": "An atom has atomic number 13 and mass number 27. How many protons, neutrons and electrons does it have?",
      "c": [
       "13 protons, 27 neutrons, 13 electrons",
       "13 protons, 14 neutrons, 13 electrons",
@@ -336,9 +335,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Neutrons = mass number − atomic number. A neutral atom has as many electrons as protons.",
-     "src": "Lesson 8, Section 3 (Q4)",
-     "q0": "An atom has atomic number 13 and mass number 27. How many protons, neutrons and electrons does it have?",
-     "t": "XSI0MSJb"
+     "src": "Lesson 8, Section 3 (Q4)"
     },
     {
      "obj": "Circuit board with two bulbs",
@@ -433,8 +430,7 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "Actual size = image size ÷ magnification. Then change mm to µm.",
-     "src": "Lesson 15, Part 2 (Q5)",
-     "t": "XSIwMDEiWw=="
+     "src": "Lesson 15, Part 2 (Q5)"
     },
     {
      "obj": "Two analog meters",
@@ -520,7 +516,7 @@ window.GAME_DATA = {
      "y": 54.7,
      "w": 24.7,
      "h": 30,
-     "q": "Four readings: 14 mm, 15 mm, 21 mm and 16 mm. Leave out the anomaly. What is the mean, in mm?",
+     "q": "Four readings at one magnification: 14 mm, 15 mm, 21 mm and 16 mm. What should be reported as the mean?",
      "c": [
       "16.5 mm: use all four readings",
       "16 mm: the middle value",
@@ -529,9 +525,7 @@ window.GAME_DATA = {
      ],
      "k": 85,
      "hint": "Spot the reading that does not fit, then average the rest.",
-     "src": "Lesson 10, Section 2 (Q3)",
-     "q0": "Four readings at one magnification: 14 mm, 15 mm, 21 mm and 16 mm. What should be reported as the mean?",
-     "t": "XSI1MSJb"
+     "src": "Lesson 10, Section 2 (Q3)"
     },
     {
      "obj": "Stack of copper sheets",
@@ -644,8 +638,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Find the actual length first (in µm), then see how many fit into 1 000 µm.",
-     "src": "Lesson 12, Section 4 (Q5)",
-     "t": "XSIwMDIiWw=="
+     "src": "Lesson 12, Section 4 (Q5)"
     },
     {
      "obj": "Sensor pad and coiled cable",

@@ -180,8 +180,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Find the length in centimeters first, then change to meters (100 cm = 1 m).",
-     "src": "Lesson 1, Practical (Q6)",
-     "t": "XSI2Mi4xIls="
+     "src": "Lesson 1, Practical (Q6)"
     },
     {
      "obj": "Plaster foot on tiptoe",
@@ -294,8 +293,7 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "First find the speed. Then time = distance ÷ speed.",
-     "src": "Lesson 15, Part 2 (Q4)",
-     "t": "XSIwMDIiWw=="
+     "src": "Lesson 15, Part 2 (Q4)"
     }
    ]
   },
@@ -390,8 +388,7 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "Gradient = change in distance ÷ change in time.",
-     "src": "Lesson 5, Section 2 (Q2)",
-     "t": "XSI1Ils="
+     "src": "Lesson 5, Section 2 (Q2)"
     }
    ]
   },
@@ -459,7 +456,7 @@ window.GAME_DATA = {
      "y": 73.6,
      "w": 24.4,
      "h": 16,
-     "q": "Runner A ran 20 m in 16.7 s. What was Runner A’s speed in m/s? (1 decimal place)",
+     "q": "Runner A ran 20 m in 16.7 s. Runner B ran 10 m in 10.1 s. Who was faster?",
      "c": [
       "B, because 10.1 s is a smaller time",
       "A: about 1.2 m/s compared with B’s 1.0 m/s",
@@ -468,9 +465,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "You need distance AND time. Work out each speed.",
-     "src": "Lesson 7, Section 1 (Q1)",
-     "q0": "Runner A ran 20 m in 16.7 s. Runner B ran 10 m in 10.1 s. Who was faster?",
-     "t": "XSIyLjEiWw=="
+     "src": "Lesson 7, Section 1 (Q1)"
     },
     {
      "obj": "Yellow multimeter and probes",

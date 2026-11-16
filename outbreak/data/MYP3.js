@@ -151,7 +151,7 @@ window.GAME_DATA = {
      "y": 49.5,
      "w": 17.4,
      "h": 26,
-     "q": "A crane lifts a 2 000 N load up 15 m in 60 s. What is the work done, in joules?",
+     "q": "A crane lifts a 2 000 N load up 15 m in 60 s. What are the work done and the power?",
      "c": [
       "30 000 J and 500 W",
       "30 000 J and 1 800 000 W",
@@ -160,9 +160,7 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "Work = force × distance. Then power = work ÷ time.",
-     "src": "Lesson 15, Part 2 (Q4)",
-     "q0": "A crane lifts a 2 000 N load up 15 m in 60 s. What are the work done and the power?",
-     "t": "XSIwMDAwMyJb"
+     "src": "Lesson 15, Part 2 (Q4)"
     },
     {
      "obj": "Model of the upper-arm muscles",
@@ -230,7 +228,7 @@ window.GAME_DATA = {
      "y": 74,
      "w": 17,
      "h": 17,
-     "q": "The same 10 N force pushes on a sharp wedge with an area of 0.5 cm². What pressure does it make, in N/cm²?",
+     "q": "The same 10 N force pushes on a blunt wedge (area 2 cm²) and a sharp wedge (area 0.5 cm²). What pressure does the sharp wedge make, compared with the blunt one?",
      "c": [
       "5 N/cm², the same as the blunt wedge",
       "20 N/cm², four times as much as the blunt wedge",
@@ -239,9 +237,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Use pressure = force ÷ area for each wedge, then compare.",
-     "src": "Lesson 3, Section 2 (Q4–Q6)",
-     "q0": "The same 10 N force pushes on a blunt wedge (area 2 cm²) and a sharp wedge (area 0.5 cm²). What pressure does the sharp wedge make, compared with the blunt one?",
-     "t": "XSIwMiJb"
+     "src": "Lesson 3, Section 2 (Q4–Q6)"
     },
     {
      "obj": "Light gates on tripods",
@@ -336,8 +332,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Left moment = washers × distance. The right moment must be the same.",
-     "src": "Lesson 5, Section 2 (Q3)",
-     "t": "XSIyMSJb"
+     "src": "Lesson 5, Section 2 (Q3)"
     },
     {
      "obj": "Circuit board with two bulbs",
@@ -450,8 +445,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Work in = effort × its distance; work out = load × its height. Then efficiency = out ÷ in × 100.",
-     "src": "Lesson 16, Part 3 (Q5)",
-     "t": "XSIwOCJb"
+     "src": "Lesson 16, Part 3 (Q5)"
     },
     {
      "obj": "Pencil-shaded strips on paper",
@@ -564,8 +558,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "(new − old) ÷ old × 100. Divide by the OLD value.",
-     "src": "Lesson 9, Section 3 (Q5)",
-     "t": "XSI2Ljg2IiwiOTYiWw=="
+     "src": "Lesson 9, Section 3 (Q5)"
     },
     {
      "obj": "Tray of grey sludge",
@@ -615,7 +608,7 @@ window.GAME_DATA = {
      "y": 30.5,
      "w": 20.5,
      "h": 25.5,
-     "q": "“Our new extraction technology lets us mine more ore from less land. Engineering will solve the problems mining causes.” Which worldview is this?",
+     "q": "“Our new extraction technology lets us mine more ore from less land. Engineering will solve the problems mining causes.” Which worldview is this? (one word)",
      "c": [
       "Ecocentric",
       "Anthropocentric",
@@ -624,7 +617,9 @@ window.GAME_DATA = {
      ],
      "k": 85,
      "hint": "What does the speaker put at the center: technology, humans or nature?",
-     "src": "Lesson 11, Section 1 and 2"
+     "src": "Lesson 11, Section 1 and 2",
+     "q0": "“Our new extraction technology lets us mine more ore from less land. Engineering will solve the problems mining causes.” Which worldview is this?",
+     "t": "XSJtc2lydG5lY29uaGNldCIsImNpcnRuZWNvbmhjZXQiWw=="
     },
     {
      "obj": "Heart monitor",
@@ -660,8 +655,7 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "Work in = F × 0.10 m. Work out = W × load rise. Then out ÷ in × 100.",
-     "src": "Lesson 14, Part 2 (Q2)",
-     "t": "XSI1NyJb"
+     "src": "Lesson 14, Part 2 (Q2)"
     },
     {
      "obj": "Robotic prosthetic hand",

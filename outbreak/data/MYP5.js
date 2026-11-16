@@ -44,8 +44,7 @@ window.GAME_DATA = {
      ],
      "k": 85,
      "hint": "Balance the moments: the muscle’s moment about the elbow must equal the load’s moment.",
-     "src": "Lesson 16, Part 2 and Part 3 (moments)",
-     "t": "XSI1NzEiWw=="
+     "src": "Lesson 16, Part 2 and Part 3 (moments)"
     },
     {
      "obj": "See-saw lever with hanging weights",
@@ -136,8 +135,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Find each acceleration with a = F ÷ m first, then compare them.",
-     "src": "Lesson 3, Main activity (Q8)",
-     "t": "XSIzIls="
+     "src": "Lesson 3, Main activity (Q8)"
     },
     {
      "obj": "Light gates on tripods",
@@ -228,8 +226,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Find the current with I = Q ÷ t, then use Q = I × t with the time in seconds.",
-     "src": "Lesson 7, Section 2 (Q3)",
-     "t": "XSIwNTEiWw=="
+     "src": "Lesson 7, Section 2 (Q3)"
     },
     {
      "obj": "Circuit board with two bulbs",
@@ -311,7 +308,7 @@ window.GAME_DATA = {
      "y": 52,
      "w": 23,
      "h": 21,
-     "q": "Two 10 Ω heaters are connected in parallel to a 12 V supply. What total current do they draw, in amps?",
+     "q": "Two 10 Ω heaters are connected in parallel to a 12 V supply. The main wire has a 3 A fuse. What is the total current, and does the fuse blow?",
      "c": [
       "1.2 A; it does not blow",
       "0.6 A; it does not blow",
@@ -320,9 +317,7 @@ window.GAME_DATA = {
      ],
      "k": 85,
      "hint": "In parallel each heater gets the full 12 V. Find each current, then add them.",
-     "src": "Lesson 10, Cornerstone Q5",
-     "q0": "Two 10 Ω heaters are connected in parallel to a 12 V supply. The main wire has a 3 A fuse. What is the total current, and does the fuse blow?",
-     "t": "XSI0LjIiWw=="
+     "src": "Lesson 10, Cornerstone Q5"
     },
     {
      "obj": "Two analog meters",
@@ -404,7 +399,7 @@ window.GAME_DATA = {
      "y": 54.7,
      "w": 24.7,
      "h": 30,
-     "q": "Copper is purified in the tank. Which plate gains mass, and why?",
+     "q": "Copper is purified in the tank. Which electrode gains mass? (one word)",
      "c": [
       "The anode (+), because copper ions are negative and move toward it",
       "The cathode (−), because positive copper ions are attracted to it and gain electrons",
@@ -413,7 +408,9 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Start with the charge on a copper ion, then decide which electrode attracts it.",
-     "src": "Lesson 11, Sections 2 and 3"
+     "src": "Lesson 11, Sections 2 and 3",
+     "q0": "Copper is purified in the tank. Which plate gains mass, and why?",
+     "t": "XSJlZG9odGFjIGVodCIsImVkb2h0YWMiWw=="
     },
     {
      "obj": "Stack of copper sheets",
@@ -438,7 +435,7 @@ window.GAME_DATA = {
      "y": 71,
      "w": 18.4,
      "h": 17.6,
-     "q": "In 10 minutes the cathode gained 0.32 g. With the same current, how much would it gain in 30 minutes, in grams?",
+     "q": "In 10 minutes the cathode gained 0.32 g. With the same current, how much would it gain in 30 minutes?",
      "c": [
       "0.32 g: the mass gain does not depend on time",
       "0.11 g",
@@ -447,9 +444,7 @@ window.GAME_DATA = {
      ],
      "k": 122,
      "hint": "Link the mass to the charge passed, and the charge to the time (Q = I × t).",
-     "src": "Lesson 11, Section 4 (how much copper moved)",
-     "q0": "In 10 minutes the cathode gained 0.32 g. With the same current, how much would it gain in 30 minutes?",
-     "t": "XSI2OS4wIls="
+     "src": "Lesson 11, Section 4 (how much copper moved)"
     },
     {
      "obj": "Tray of grey sludge",
@@ -523,8 +518,7 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "How many beats fit into 60 seconds if one beat takes 0.8 s?",
-     "src": "Lesson 12, Section 4 (the heart’s pacemaker)",
-     "t": "XSI1NyJb"
+     "src": "Lesson 12, Section 4 (the heart’s pacemaker)"
     },
     {
      "obj": "Sensor pad and coiled cable",
