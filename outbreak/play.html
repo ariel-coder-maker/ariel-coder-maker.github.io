@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Outbreak Lab Escape</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="hud" class="hidden">
+  <div class="room"><span id="roomName">Room</span> <span class="lessons" id="roomLessons" style="color:var(--mut);font-weight:400"></span></div>
+  <div class="grow"></div>
+  <div id="survivors" aria-label="Survivors"></div>
+  <div id="keys" aria-label="Keys collected"></div>
+  <div id="clock" aria-live="off">06:00</div>
+  <button class="hbtn" id="btnSound" title="Sound on/off (M)">🔊</button>
+  <button class="hbtn" id="btnPause" title="Pause (P)">Pause</button>
+  <button class="hbtn" id="btnRestart" title="Restart the game">Restart</button>
+</header>
+
+<main id="stage" class="hidden">
+  <div id="scene">
+    <img id="roomImg" alt="">
+    <div id="hots"></div>
+    <div id="redpulse"></div>
+    <div id="vignette"></div>
+  </div>
+</main>
+
+<footer id="bar" class="hidden">
+  <div id="letters"></div>
+  <div class="msg" id="barMsg">Click objects in the room to find the questions.</div>
+  <div id="role"></div>
+</footer>
+
+<aside id="panel" aria-live="polite"></aside>
+
+<div id="doorfx" class="hidden"><div class="l"></div><div class="r"></div></div>
+<div id="countdown" class="hidden"></div>
+<div id="toast"></div>
+<div id="infect"></div>
+
+<!-- cover -->
+<section class="screen" id="cover">
+  <div class="card">
+    <h1>OUTBREAK <span>LAB</span> ESCAPE</h1>
+    <div id="coverGrade" style="color:var(--mut);margin-bottom:8px"></div>
+    <p id="coverStory"></p>
+    <div class="journey" id="coverJourney"></div>
+    <p class="rule" id="coverRule"></p>
+    <p style="margin:6px 0 4px"><b>How it works.</b> Six locked rooms. Each room has <b>4 question objects</b>. Each correct answer gives your team a letter. Unscramble the 4 letters into a word and enter it at the door to win that room’s key. Each room has <b>6 minutes</b>. After that, every full minute late turns one of your six team members into a zombie, and they stay that way.</p>
+    <p style="margin:4px 0"><b>Think before you click.</b> A wrong answer adds <b>15 seconds</b> to your clock. Clear a room with <b>no wrong answers</b> and you find an <b>antidote 🧪</b>: it cures one infected team member, or stops the next infection.</p>
+    <div class="roles">
+      <div><b>Code Keeper</b>types the agreed answer</div>
+      <div><b>Note-taker</b>writes letters and evidence</div>
+      <div><b>Planner</b>splits the objects</div>
+      <div><b>Strategist</b>checks the reasoning</div>
+      <div><b>Decider</b>confirms the team agrees</div>
+      <div><b>Researcher</b>finds the lesson evidence</div>
+    </div>
+    <p style="font-size:13px;color:var(--mut);margin:4px 0 10px">Rotate jobs after every 2 correct answers. In a smaller team, people combine jobs.</p>
+    <label for="teamName" style="font-weight:600">Team name</label>
+    <input type="text" id="teamName" maxlength="28" placeholder="e.g. The Resistors" autocomplete="off">
+    <div style="font-weight:600;margin-top:10px">Players (3 to 6). Empty places become lab assistants, and they turn first.</div>
+    <div class="names"><input type="text" class="pname" maxlength="16" placeholder="Player 1" autocomplete="off" aria-label="Player 1 name"><input type="text" class="pname" maxlength="16" placeholder="Player 2" autocomplete="off" aria-label="Player 2 name"><input type="text" class="pname" maxlength="16" placeholder="Player 3" autocomplete="off" aria-label="Player 3 name"><input type="text" class="pname" maxlength="16" placeholder="Player 4" autocomplete="off" aria-label="Player 4 name"><input type="text" class="pname" maxlength="16" placeholder="Player 5" autocomplete="off" aria-label="Player 5 name"><input type="text" class="pname" maxlength="16" placeholder="Player 6" autocomplete="off" aria-label="Player 6 name"></div>
+    <div class="opts">
+      <label><input type="checkbox" id="optSound" checked> Sound</label>
+      <label><input type="checkbox" id="optReduced"> Reduced motion</label>
+      <label><input type="checkbox" id="optNoFlash"> No flashing</label>
+    </div>
+    <button class="big" id="btnStart">START</button>
+  </div>
+</section>
+
+<section class="screen hidden" id="pausescr"><div class="card"><h1>PAUSED</h1><p>The clock and sound are stopped.</p><button class="big" id="btnResume">Resume</button></div></section>
+<section class="screen hidden" id="failscr"><div class="card"><h1>OUTBREAK</h1><p>The whole team has been infected. Regroup, then try again from Room 1.</p><div class="zombie-walk" id="failTeam"></div><button class="big" id="btnFailRestart">Restart from Room 1</button></div></section>
+<section class="screen hidden" id="winscr"><div class="card">
+  <h1>YOU <span>ESCAPED</span></h1>
+  <p id="winLine"></p>
+  <div class="zombie-walk esc" id="winTeam"></div>
+  <table class="splits" id="winSplits"></table>
+  <p style="font-size:14px;color:var(--mut)">Before you claim the prize: share with your teacher one answer your team changed after someone found better evidence.</p>
+  <button class="big" id="btnPrint">Print prize pass</button>
+  <button class="big alt" id="btnAgain">Play again</button>
+</div></section>
+
+<section id="pass"></section>
+
+<script src="music.js"></script>
+<script src="engine.js"></script>
+<script>
+  (function () {
+    var allowed = { MYP5: 1, MYP4: 1, MYP3: 1, MYP2: 1 };
+    var g = (new URLSearchParams(location.search).get('grade') || '').toUpperCase();
+    if (!allowed[g]) { location.href = 'index.html'; return; }
+    var s = document.createElement('script');
+    s.src = 'data/' + g + '.js';
+    s.onload = function () { Game.boot(window.GAME_DATA); };
+    s.onerror = function () { document.body.innerHTML = '<p style="padding:30px">The ' + g + ' version is not built yet. <a href="index.html" style="color:#5dfc9a">Back</a></p>'; };
+    document.body.appendChild(s);
+  })();
+</script>
+</body>
+</html>

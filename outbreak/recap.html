@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Term in Review</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body{overflow:hidden}
+  .slide{position:fixed;inset:0;display:none;background:#000 center/cover no-repeat}
+  .slide.on{display:block}
+  .slide::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000e 0%,#000c 55%,#0009 100%)}
+  .inner{position:relative;height:100%;padding:5vh 6vw;display:flex;flex-direction:column}
+  .kicker{color:var(--acc);font:700 1.6vw/1.2 "Segoe UI",sans-serif;letter-spacing:.12em;text-transform:uppercase}
+  .slide h1{font-size:4.2vw;margin:.6vh 0 2vh;line-height:1.05}
+  .slide h1 span{color:var(--acc)}
+  .lessons{color:var(--warn);font-size:1.5vw;margin-bottom:2.5vh}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:3vw;flex:1}
+  .col h2{font-size:1.9vw;margin:0 0 1.2vh;color:#7ad7ff;border-bottom:2px solid #7ad7ff55;padding-bottom:.6vh}
+  .col.learn h2{color:var(--acc);border-color:#5dfc9a55}
+  .col ul{margin:0;padding-left:1.4em}
+  .col li{font-size:1.75vw;line-height:1.35;margin:.7vh 0;color:#e8eef0}
+  .soi{font-size:2.3vw;line-height:1.4;max-width:70vw;border-left:6px solid var(--acc);padding:1vh 2vw;background:#0008}
+  .ask{margin-top:2vh;font-size:1.6vw;color:#ffe2a6;background:#1f1a0dcc;border-left:5px solid var(--warn);padding:1vh 1.5vw;max-width:70vw}
+  .nav{position:fixed;right:2vw;bottom:2vh;display:flex;gap:10px;align-items:center;z-index:5;color:var(--mut);font-size:14px}
+  .nav button{background:#000a;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:8px 14px;font-size:16px}
+  .go{display:inline-block;margin-top:3vh;font-size:2vw;padding:1.4vh 2.4vw}
+  @media (max-width:800px){.cols{grid-template-columns:1fr}.col li{font-size:15px}.slide h1{font-size:30px}.kicker,.lessons,.col h2{font-size:15px}.soi,.ask{font-size:17px}}
+</style>
+</head>
+<body>
+<div id="deck"></div>
+<div class="nav"><span id="count"></span><button id="prev" aria-label="Previous slide">◀</button><button id="next" aria-label="Next slide">▶</button></div>
+<script>
+(function () {
+  var allowed = { MYP5: 1, MYP4: 1, MYP3: 1, MYP2: 1 };
+  var g = (new URLSearchParams(location.search).get('grade') || '').toUpperCase();
+  if (!allowed[g]) { location.href = 'index.html'; return; }
+  var s = document.createElement('script'); s.src = 'data/' + g + '.js'; s.onload = build; document.body.appendChild(s);
+  function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+  function build() {
+    var D = window.GAME_DATA, R = D.recap, deck = document.getElementById('deck'), html = '';
+    html += '<section class="slide" style="background-image:url(' + D.rooms[0].image + ')"><div class="inner"><div class="kicker">' + esc(D.gradeLabel) + ' · Term 1 in review</div>' +
+      '<h1>' + esc(D.unit) + '</h1><p class="soi"><b>Our statement of inquiry:</b> ' + esc(R.soi) + '</p><p class="ask">' + esc(R.opener) + '</p></div></section>';
+    R.stops.forEach(function (st, i) {
+      html += '<section class="slide" style="background-image:url(' + D.rooms[i % D.rooms.length].image + ')"><div class="inner"><div class="kicker">Stop ' + (i + 1) + ' of ' + R.stops.length + '</div>' +
+        '<h1>' + esc(st.title) + '</h1><div class="lessons">' + esc(st.lessons) + '</div><div class="cols">' +
+        '<div class="col"><h2>What we did</h2><ul>' + st.did.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>' +
+        '<div class="col learn"><h2>What we learned</h2><ul>' + st.learned.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div></div>' +
+        (st.ask ? '<p class="ask">' + esc(st.ask) + '</p>' : '') + '</div></section>';
+    });
+    html += '<section class="slide" style="background-image:url(' + D.rooms[D.rooms.length - 1].image + ')"><div class="inner"><div class="kicker">Your mission</div>' +
+      '<h1>Escape the <span>Outbreak Lab</span></h1><p class="soi">Six locked rooms. Every question comes from the term you just reviewed. Keep your Lesson 1–16 worksheets open: they are your only weapon.</p>' +
+      '<div><a class="big go" href="play.html?grade=' + g + '">Open the game</a></div></div></section>';
+    deck.innerHTML = html; show(0);
+  }
+  var cur = 0;
+  function show(n) {
+    var sl = document.querySelectorAll('.slide'); if (!sl.length) return;
+    cur = Math.max(0, Math.min(sl.length - 1, n));
+    sl.forEach(function (x, i) { x.classList.toggle('on', i === cur); });
+    document.getElementById('count').textContent = (cur + 1) + ' / ' + sl.length;
+  }
+  document.getElementById('prev').onclick = function () { show(cur - 1); };
+  document.getElementById('next').onclick = function () { show(cur + 1); };
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') show(cur + 1);
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') show(cur - 1);
+  });
+})();
+</script>
+</body>
+</html>
