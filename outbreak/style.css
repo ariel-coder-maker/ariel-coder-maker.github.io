@@ -143,3 +143,7 @@ body.debug .hot.clue{border-color:#ffd23d!important}
 .who{margin:0;text-align:center;font-size:12px;color:var(--ink);max-width:70px}
 .who.z{color:#7cff6b}
 .zombie-walk{flex-wrap:wrap}
+
+/* hard mode (2026-11-16) */
+.typed{display:flex;gap:8px;margin:10px 0}.typed input{flex:1;font:700 20px Consolas,monospace;padding:8px 10px;border-radius:8px;border:2px solid var(--line,#475569);background:#0b1220;color:#fff}
+body.vault #roomImg{filter:hue-rotate(-40deg) saturate(1.4) brightness(.8)}body.vault #roomName{color:#f87171}

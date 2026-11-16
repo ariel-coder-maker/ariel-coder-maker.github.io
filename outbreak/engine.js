@@ -2,11 +2,12 @@
    Grade content lives in data/<GRADE>.js (window.GAME_DATA). No network calls at play time. */
 (function () {
   'use strict';
-  var ROOM_SECONDS = 360;          // 6:00 per room
+  var ROOM_SECONDS = 300;          // 5:00 per room (was 6:00; the first class finished in 20 min)
   var LOSS_EVERY = 60;             // one team member per full minute late
   var TEAM = 6;
-  var PENALTY = 15;              // seconds added for each wrong answer
-  var BEATS = ['The quarantine lights flicker. Something moved in the next room.', 'Claw marks on the walls lead deeper into the lab.', 'The power is failing. Sparks rain from the ceiling.', 'You hear scratching behind the vault door.', 'The air turns thick and blue. Not much further.', 'Daylight! The exit is open, but the keypad still guards it.'];
+  var PENALTY = 30;              // seconds added for each wrong answer (was 15)
+  var LOCK = 30;                 // a question locks this long after a wrong answer, so clicking through choices does not pay
+  var BEATS = ['The quarantine lights flicker. Something moved in the next room.', 'Claw marks on the walls lead deeper into the lab.', 'The power is failing. Sparks rain from the ceiling.', 'You hear scratching behind the vault door.', 'The air turns thick and blue. Not much further.', 'Daylight! The exit is open, but the keypad still guards it.', 'THE VAULT. The cure is sealed inside. Three final locks.'];
   var ROLES = ['Code Keeper', 'Note-taker', 'Planner', 'Strategist', 'Decider', 'Researcher'];
   var $ = function (id) { return document.getElementById(id); };
 
@@ -16,6 +17,17 @@
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
   function word(r) { return atob(r.w).split('').reverse().join(''); }
   function answerIndex(q) { return (q.k - 11) / 37; }
+  function accepts(q) { try { return JSON.parse(decodeURIComponent(escape(atob(q.t))).split('').reverse().join('')); } catch (e) { return []; } }
+  function norm(t) { return String(t).toLowerCase().replace(/[\s,]+/g, '').replace(/[.]+$/g, ''); }
+  function numOf(t) { var m = String(t).replace(/(\d)[\s,](?=\d{3}\b)/g, '$1').match(/-?\d+(\.\d+)?/); return m ? parseFloat(m[0]) : null; }
+  function typedOk(q, v) {
+    var n = numOf(v);
+    return accepts(q).some(function (x) {
+      var xn = numOf(x);
+      if (xn !== null && /^\s*-?\d/.test(String(x))) return n !== null && Math.abs(n - xn) <= Math.max(Math.abs(xn) * 0.01, 1e-9);
+      return norm(v) === norm(x);
+    });
+  }
   function mmss(s) { s = Math.max(0, Math.floor(s)); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
   function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
   function person(state) {
@@ -100,13 +112,15 @@
     S.solved = r.qs.map(function () { return false; });
     S.letters = [];
     S.letterFor = shuffle(word(r).split(''));            // which question gives which letter, new every run
-    S.order = r.qs.map(function (q) { return shuffle(q.c.map(function (t, idx) { return idx; })); });
+    S.order = r.qs.map(function (q) { return shuffle((q.c || []).map(function (t, idx) { return idx; })); });
+    S.lockAt = r.qs.map(function () { return -1e9; });
+    document.body.classList.toggle('vault', !!r.vault);
     $('roomImg').src = r.image; $('roomImg').alt = r.name;
     $('roomName').textContent = 'Room ' + (i + 1) + ' of ' + D.rooms.length + ' · ' + r.name;
     $('roomLessons').textContent = '· ' + r.lessons;
     document.body.classList.remove('overtime');
     buildHots(r); drawLetters(); drawTeam(); drawKeys(); closePanel(); fit(); paintClock(0);
-    $('barMsg').textContent = 'Find the 4 question objects in this room.';
+    $('barMsg').textContent = 'Find the ' + r.qs.length + ' question objects in this room.' + (r.vault ? ' This is the final vault.' : '');
   }
 
   function beginRoom() { S.t0 = performance.now(); S.running = true; Snd.play(S.room); }
@@ -146,7 +160,7 @@
   }
   function drawKeys() { var h = ''; for (var i = 0; i < D.rooms.length; i++) h += '<span class="key' + (i < S.keys ? ' got' : '') + '"></span>'; $('keys').innerHTML = h; }
   function drawLetters() {
-    var h = ''; for (var i = 0; i < 4; i++) h += '<div class="slot' + (S.letters[i] ? ' got' : '') + '">' + (S.letters[i] || '') + '</div>';
+    var h = '', L = (S.room != null && D.rooms[S.room]) ? word(D.rooms[S.room]).length : 4; for (var i = 0; i < L; i++) h += '<div class="slot' + (S.letters[i] ? ' got' : '') + '">' + (S.letters[i] || '') + '</div>';
     $('letters').innerHTML = h;
     $('role').innerHTML = 'Swap jobs every 2 correct answers · <b>Rotation ' + (S.roleAt + 1) + '</b>';
   }
@@ -181,7 +195,44 @@
 
   function openQ(i) {
     if (S.paused || S.over) return;
-    var q = D.rooms[S.room].qs[i], ans = answerIndex(q);
+    var q = D.rooms[S.room].qs[i], ans = answerIndex(q), need = D.rooms[S.room].qs.length;
+    var left = Math.ceil(S.lockAt[i] + LOCK - elapsed());
+    if (!S.solved[i] && left > 0) {
+      openPanel('<h3>' + esc(q.card || q.obj) + '</h3><div class="q">&#128274; Locked for <b id="lockN">' + left + '</b> more seconds after a wrong answer.</div><p>Use the time: check the lesson it names in your worksheets.</p><div class="fb bad">' + esc(q.hint) + '</div>');
+      var iv = setInterval(function () { var el = $('lockN'); if (!el) { clearInterval(iv); return; } var l = Math.ceil(S.lockAt[i] + LOCK - elapsed()); if (l <= 0) { clearInterval(iv); openQ(i); } else el.textContent = l; }, 500);
+      return;
+    }
+    var wrongNow = function () {
+      Snd.wrong(); S.wrongRoom++; S.penalties++;
+      if (S.running) { S.acc += PENALTY; paintClock(elapsed()); }
+      S.lockAt[i] = elapsed();
+      S.order[i] = shuffle(S.order[i]);
+      $('fb').innerHTML = '<div class="fb bad">Not that one. <b>+' + PENALTY + ' seconds</b>, and this question locks for ' + LOCK + ' s. ' + esc(q.hint) + '</div>';
+      document.querySelectorAll('#ch .choice, #tin, #tgo').forEach(function (x) { x.disabled = true; });
+      setTimeout(function () { if ($('panel').classList.contains('open') && $('fb')) openQ(i); }, 2200);
+    };
+    var rightNow = function () {
+      S.solved[i] = true; S.letters.push(S.letterFor[i]); S.correct++;
+      $('fb').innerHTML = '<div class="fb good">Correct! Your team earns the letter <b style="font-size:22px">' + S.letterFor[i] + '</b>.</div>';
+      Snd.right(); drawLetters(); markDone();
+      if (S.correct % 2 === 0) { S.roleAt++; drawLetters(); toast('Rotate jobs! Everyone passes their job to the next person.'); }
+      var n = S.letters.length;
+      $('barMsg').textContent = n < need ? (need - n) + ' more correct answer' + (need - n === 1 ? '' : 's') + ' to unlock the code.' : 'All ' + need + ' letters found! Unscramble them and enter the code at the door.';
+    };
+    if (q.t) {
+      var th = '<h3>' + esc(q.card || q.obj) + ' &middot; type your answer</h3><div class="q">' + esc(q.q) + '</div>';
+      if (S.solved[i]) th += '<div class="fb good">Solved. This object gave your team the letter <b>' + S.letterFor[i] + '</b>.</div>';
+      else th += '<div class="typed"><input id="tin" autocomplete="off" aria-label="Your answer" placeholder="Type the answer"> <button class="big" id="tgo">Check</button></div><div id="fb"></div>';
+      th += '<div class="src"><button class="srcbtn" id="srcBtn">Show where to look</button> <span id="srcTxt"></span></div>';
+      openPanel(th);
+      $('srcBtn').onclick = function () { $('srcTxt').textContent = 'Search: ' + q.src; };
+      if (!S.solved[i]) {
+        var tin = $('tin'); tin.focus(); tin.oninput = function () { Snd.key(); };
+        var check = function () { if (S.solved[i] || !tin.value.trim()) return; if (typedOk(q, tin.value)) { tin.disabled = true; $('tgo').disabled = true; rightNow(); } else wrongNow(); };
+        $('tgo').onclick = check; tin.onkeydown = function (e) { if (e.key === 'Enter') check(); };
+      }
+      return;
+    }
     var h = '<h3>' + esc(q.card || q.obj) + '</h3><div class="q">' + esc(q.q) + '</div><div id="ch">';
     S.order[i].forEach(function (idx) {
       var cls = S.solved[i] ? (idx === ans ? ' right' : ' wrong') : '';
@@ -196,17 +247,10 @@
         if (S.solved[i]) return;
         var pick = +b.dataset.i;
         if (pick === ans) {
-          S.solved[i] = true; S.letters.push(S.letterFor[i]); S.correct++;
           b.classList.add('right'); document.querySelectorAll('#ch .choice').forEach(function (x) { x.disabled = true; });
-          $('fb').innerHTML = '<div class="fb good">Correct! Your team earns the letter <b style="font-size:22px">' + S.letterFor[i] + '</b>.</div>';
-          Snd.right(); drawLetters(); markDone();
-          if (S.correct % 2 === 0) { S.roleAt++; drawLetters(); toast('Rotate jobs! Everyone passes their job to the next person.'); }
-          var n = S.letters.length;
-          $('barMsg').textContent = n < 4 ? (4 - n) + ' more correct answer' + (4 - n === 1 ? '' : 's') + ' to unlock the code.' : 'All 4 letters found! Unscramble them and enter the code at the door.';
+          rightNow();
         } else {
-          b.classList.add('wrong'); b.disabled = true; Snd.wrong(); S.wrongRoom++; S.penalties++;
-          if (S.running) { S.acc += PENALTY; paintClock(elapsed()); }
-          $('fb').innerHTML = '<div class="fb bad">Not that one. <b>+' + PENALTY + ' seconds.</b> ' + esc(q.hint) + '</div>';
+          b.classList.add('wrong'); wrongNow();
         }
       };
     });
@@ -221,9 +265,10 @@
   function openDoor() {
     if (S.paused || S.over) return;
     var n = S.letters.length, r = D.rooms[S.room];
-    if (n < 4) { openPanel('<h3>' + esc(r.door.label) + '</h3><div class="q">The door is sealed. The keypad needs a 4-letter code.</div><p>Correct answers so far: <b>' + n + ' / 4</b>. Each correct answer gives your team one letter.</p>'); return; }
+    var need = r.qs.length;
+    if (n < need) { openPanel('<h3>' + esc(r.door.label) + '</h3><div class="q">The door is sealed. The keypad needs a ' + need + '-letter code.</div><p>Correct answers so far: <b>' + n + ' / ' + need + '</b>. Each correct answer gives your team one letter.</p>'); return; }
     openPanel('<h3>' + esc(r.door.label) + '</h3><div class="q">Your letters: <b style="font:800 26px Consolas,monospace;color:var(--warn);letter-spacing:.3em">' + S.letters.join('') +
-      '</b><br>Rearrange them into a science word and type it in.</div><input id="codein" maxlength="4" autocomplete="off" aria-label="Door code"><div id="codefb"></div><button class="big" id="codeGo">Unlock</button>');
+      '</b><br>Rearrange them into a science word and type it in.</div><input id="codein" maxlength="' + need + '" autocomplete="off" aria-label="Door code"><div id="codefb"></div><button class="big" id="codeGo">Unlock</button>');
     var inp = $('codein'); inp.focus(); inp.oninput = function () { Snd.key(); };
     var go = function () {
       var v = inp.value.trim().toUpperCase();

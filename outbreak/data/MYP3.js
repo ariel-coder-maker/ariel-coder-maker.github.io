@@ -151,7 +151,7 @@ window.GAME_DATA = {
      "y": 49.5,
      "w": 17.4,
      "h": 26,
-     "q": "A crane lifts a 2 000 N load up 15 m in 60 s. What are the work done and the power?",
+     "q": "A crane lifts a 2 000 N load up 15 m in 60 s. What is the work done, in joules?",
      "c": [
       "30 000 J and 500 W",
       "30 000 J and 1 800 000 W",
@@ -160,7 +160,9 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "Work = force × distance. Then power = work ÷ time.",
-     "src": "Lesson 15, Part 2 (Q4)"
+     "src": "Lesson 15, Part 2 (Q4)",
+     "q0": "A crane lifts a 2 000 N load up 15 m in 60 s. What are the work done and the power?",
+     "t": "XSIwMDAwMyJb"
     },
     {
      "obj": "Model of the upper-arm muscles",
@@ -228,7 +230,7 @@ window.GAME_DATA = {
      "y": 74,
      "w": 17,
      "h": 17,
-     "q": "The same 10 N force pushes on a blunt wedge (area 2 cm²) and a sharp wedge (area 0.5 cm²). What pressure does the sharp wedge make, compared with the blunt one?",
+     "q": "The same 10 N force pushes on a sharp wedge with an area of 0.5 cm². What pressure does it make, in N/cm²?",
      "c": [
       "5 N/cm², the same as the blunt wedge",
       "20 N/cm², four times as much as the blunt wedge",
@@ -237,7 +239,9 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Use pressure = force ÷ area for each wedge, then compare.",
-     "src": "Lesson 3, Section 2 (Q4–Q6)"
+     "src": "Lesson 3, Section 2 (Q4–Q6)",
+     "q0": "The same 10 N force pushes on a blunt wedge (area 2 cm²) and a sharp wedge (area 0.5 cm²). What pressure does the sharp wedge make, compared with the blunt one?",
+     "t": "XSIwMiJb"
     },
     {
      "obj": "Light gates on tripods",
@@ -332,7 +336,8 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Left moment = washers × distance. The right moment must be the same.",
-     "src": "Lesson 5, Section 2 (Q3)"
+     "src": "Lesson 5, Section 2 (Q3)",
+     "t": "XSIyMSJb"
     },
     {
      "obj": "Circuit board with two bulbs",
@@ -445,7 +450,8 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Work in = effort × its distance; work out = load × its height. Then efficiency = out ÷ in × 100.",
-     "src": "Lesson 16, Part 3 (Q5)"
+     "src": "Lesson 16, Part 3 (Q5)",
+     "t": "XSIwOCJb"
     },
     {
      "obj": "Pencil-shaded strips on paper",
@@ -558,7 +564,8 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "(new − old) ÷ old × 100. Divide by the OLD value.",
-     "src": "Lesson 9, Section 3 (Q5)"
+     "src": "Lesson 9, Section 3 (Q5)",
+     "t": "XSI2Ljg2IiwiOTYiWw=="
     },
     {
      "obj": "Tray of grey sludge",
@@ -653,7 +660,8 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "Work in = F × 0.10 m. Work out = W × load rise. Then out ÷ in × 100.",
-     "src": "Lesson 14, Part 2 (Q2)"
+     "src": "Lesson 14, Part 2 (Q2)",
+     "t": "XSI1NyJb"
     },
     {
      "obj": "Robotic prosthetic hand",
@@ -672,6 +680,84 @@ window.GAME_DATA = {
      "k": 48,
      "hint": "Use the word from the reading for a change that is very hard to undo.",
      "src": "Lesson 16, Part 2 (Q4)"
+    }
+   ]
+  },
+  {
+   "name": "The Vault",
+   "lessons": "Every stop",
+   "image": "assets/MYP5/room-06-bionics.jpg",
+   "vault": true,
+   "w": "TElP",
+   "clue": {
+    "label": "Mannequin hand with a pencil strip",
+    "x": 85.4,
+    "y": 58,
+    "w": 12.4,
+    "h": 26,
+    "text": "The cure is sealed in here. Each lock links two stops of the term. Read carefully: one wrong answer costs 30 seconds."
+   },
+   "door": {
+    "label": "Final exit door and keypad",
+    "x": 68.9,
+    "y": 22,
+    "w": 16,
+    "h": 48
+   },
+   "qs": [
+    {
+     "obj": "Vault lock 1",
+     "card": "Vault lock 1",
+     "x": 46,
+     "y": 30.5,
+     "w": 20.5,
+     "h": 25.5,
+     "q": "A pulley system is 80% efficient. You need 2 000 J of useful work to lift a load. How much energy must you put in?",
+     "c": [
+      "2 500 J",
+      "1 600 J",
+      "2 000 J",
+      "400 J"
+     ],
+     "k": 11,
+     "hint": "Energy in = useful energy out ÷ efficiency (as a decimal).",
+     "src": "Lessons 1 and 7: work and efficiency"
+    },
+    {
+     "obj": "Vault lock 2",
+     "card": "Vault lock 2",
+     "x": 17,
+     "y": 47.5,
+     "w": 11,
+     "h": 15.6,
+     "q": "A lever is balanced. The effort is 50 N at 0.8 m from the pivot. The load is 0.2 m from the pivot. What are the load and the mechanical advantage?",
+     "c": [
+      "200 N; MA = 4",
+      "12.5 N; MA = 0.25",
+      "40 N; MA = 0.8",
+      "200 N; MA = 0.25"
+     ],
+     "k": 11,
+     "hint": "Balanced: effort × its distance = load × its distance. Then MA = load ÷ effort.",
+     "src": "Lessons 5 and 8: moments and mechanical advantage"
+    },
+    {
+     "obj": "Vault lock 3",
+     "card": "Vault lock 3",
+     "x": 58.9,
+     "y": 72,
+     "w": 21.5,
+     "h": 11,
+     "q": "Power station A turns 35% of its coal energy into electricity; station B turns 45%. Both must supply 900 J. How much MORE coal energy does A burn?",
+     "c": [
+      "About 570 J more",
+      "100 J more",
+      "About 2 570 J more",
+      "The same amount"
+     ],
+     "k": 11,
+     "hint": "Energy in = 900 ÷ efficiency for each station, then subtract.",
+     "src": "Lessons 7, 9 and 10: efficiency and finite resources"
     }
    ]
   }

@@ -134,7 +134,7 @@ window.GAME_DATA = {
      "y": 37,
      "w": 12,
      "h": 43,
-     "q": "A group drops eggs from 20, 40 and 60 cm, but uses small eggs at 20 cm and large eggs at 60 cm. Only the 60 cm eggs break. Which conclusion is justified?",
+     "q": "In a fair test, what do we call the ONE variable the scientist changes on purpose? (one word)",
      "c": [
       "Drop height caused the eggs to break",
       "Egg size caused the eggs to break",
@@ -143,7 +143,9 @@ window.GAME_DATA = {
      ],
      "k": 85,
      "hint": "Count how many things changed between the trials.",
-     "src": "Lesson 2, Section 3 (Q9) and Lesson 5"
+     "src": "Lesson 2, Section 3 (Q9) and Lesson 5",
+     "q0": "A group drops eggs from 20, 40 and 60 cm, but uses small eggs at 20 cm and large eggs at 60 cm. Only the 60 cm eggs break. Which conclusion is justified?",
+     "t": "XSJ2aSIsImVsYmFpcmF2IHRuZWRuZXBlZG5pIiwidG5lZG5lcGVkbmkiWw=="
     },
     {
      "obj": "See-saw lever with hanging weights",
@@ -256,7 +258,8 @@ window.GAME_DATA = {
      ],
      "k": 85,
      "hint": "First find the field of view at ×100. It shrinks as the magnification grows. Then divide and convert to µm.",
-     "src": "Lesson 7, Section 2 (Q2)"
+     "src": "Lesson 7, Section 2 (Q2)",
+     "t": "XSIwNTEiWw=="
     },
     {
      "obj": "Silver stopwatch",
@@ -324,7 +327,7 @@ window.GAME_DATA = {
      "y": 59,
      "w": 6.2,
      "h": 10,
-     "q": "An atom has atomic number 13 and mass number 27. How many protons, neutrons and electrons does it have?",
+     "q": "An atom has atomic number 13 and mass number 27. How many NEUTRONS does it have?",
      "c": [
       "13 protons, 27 neutrons, 13 electrons",
       "13 protons, 14 neutrons, 13 electrons",
@@ -333,7 +336,9 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Neutrons = mass number − atomic number. A neutral atom has as many electrons as protons.",
-     "src": "Lesson 8, Section 3 (Q4)"
+     "src": "Lesson 8, Section 3 (Q4)",
+     "q0": "An atom has atomic number 13 and mass number 27. How many protons, neutrons and electrons does it have?",
+     "t": "XSI0MSJb"
     },
     {
      "obj": "Circuit board with two bulbs",
@@ -428,7 +433,8 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "Actual size = image size ÷ magnification. Then change mm to µm.",
-     "src": "Lesson 15, Part 2 (Q5)"
+     "src": "Lesson 15, Part 2 (Q5)",
+     "t": "XSIwMDEiWw=="
     },
     {
      "obj": "Two analog meters",
@@ -514,7 +520,7 @@ window.GAME_DATA = {
      "y": 54.7,
      "w": 24.7,
      "h": 30,
-     "q": "Four readings at one magnification: 14 mm, 15 mm, 21 mm and 16 mm. What should be reported as the mean?",
+     "q": "Four readings: 14 mm, 15 mm, 21 mm and 16 mm. Leave out the anomaly. What is the mean, in mm?",
      "c": [
       "16.5 mm: use all four readings",
       "16 mm: the middle value",
@@ -523,7 +529,9 @@ window.GAME_DATA = {
      ],
      "k": 85,
      "hint": "Spot the reading that does not fit, then average the rest.",
-     "src": "Lesson 10, Section 2 (Q3)"
+     "src": "Lesson 10, Section 2 (Q3)",
+     "q0": "Four readings at one magnification: 14 mm, 15 mm, 21 mm and 16 mm. What should be reported as the mean?",
+     "t": "XSI1MSJb"
     },
     {
      "obj": "Stack of copper sheets",
@@ -636,7 +644,8 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Find the actual length first (in µm), then see how many fit into 1 000 µm.",
-     "src": "Lesson 12, Section 4 (Q5)"
+     "src": "Lesson 12, Section 4 (Q5)",
+     "t": "XSIwMDIiWw=="
     },
     {
      "obj": "Sensor pad and coiled cable",
@@ -673,6 +682,84 @@ window.GAME_DATA = {
      "k": 85,
      "hint": "Use the signals from your Lesson 4 grid: peer review, controls, sample size, warnings.",
      "src": "Lesson 4, Section 3 (Q4–Q6)"
+    }
+   ]
+  },
+  {
+   "name": "The Vault",
+   "lessons": "Every stop",
+   "image": "assets/MYP5/room-06-bionics.jpg",
+   "vault": true,
+   "w": "QU5E",
+   "clue": {
+    "label": "Mannequin hand with a pencil strip",
+    "x": 85.4,
+    "y": 58,
+    "w": 12.4,
+    "h": 26,
+    "text": "The cure is sealed in here. Each lock links two stops of the term. Read carefully: one wrong answer costs 30 seconds."
+   },
+   "door": {
+    "label": "Final exit door and keypad",
+    "x": 68.9,
+    "y": 22,
+    "w": 16,
+    "h": 48
+   },
+   "qs": [
+    {
+     "obj": "Vault lock 1",
+     "card": "Vault lock 1",
+     "x": 46,
+     "y": 30.5,
+     "w": 20.5,
+     "h": 25.5,
+     "q": "A cell is 50 µm long. You view it at ×400 total magnification. How long is its image, in mm?",
+     "c": [
+      "20 mm",
+      "2 mm",
+      "200 mm",
+      "0.125 mm"
+     ],
+     "k": 11,
+     "hint": "Image = actual × magnification. Change µm to mm first (1 mm = 1 000 µm).",
+     "src": "Lessons 6, 7 and 15: magnification and units"
+    },
+    {
+     "obj": "Vault lock 2",
+     "card": "Vault lock 2",
+     "x": 17,
+     "y": 47.5,
+     "w": 11,
+     "h": 15.6,
+     "q": "Two chlorine atoms have atomic number 17. One has mass number 35, the other 37. Which statement is correct?",
+     "c": [
+      "Both have 17 protons; the 37 one has 2 more neutrons (20 against 18)",
+      "The 37 one has 2 more protons",
+      "They are different elements because their masses differ",
+      "Both have 20 neutrons"
+     ],
+     "k": 11,
+     "hint": "The atomic number fixes the protons. Neutrons = mass number − atomic number.",
+     "src": "Lessons 8 and 9: building the atom"
+    },
+    {
+     "obj": "Vault lock 3",
+     "card": "Vault lock 3",
+     "x": 58.9,
+     "y": 72,
+     "w": 21.5,
+     "h": 11,
+     "q": "A newton meter reads 4.9 N, 4.9 N and 6.2 N for the same 0.5 kg mass. What value of g should you report?",
+     "c": [
+      "9.8 N/kg: leave out the 6.2 N anomaly, then g = W ÷ m",
+      "10.7 N/kg: average all three readings",
+      "2.45 N/kg: m ÷ W",
+      "4.9 N/kg: the reading itself"
+     ],
+     "k": 11,
+     "hint": "Remove the anomaly before averaging, then g = weight ÷ mass.",
+     "src": "Lessons 10, 13 and 14: forces and reliable data"
     }
    ]
   }

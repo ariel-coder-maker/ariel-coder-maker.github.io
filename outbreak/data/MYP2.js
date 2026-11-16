@@ -180,7 +180,8 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "Find the length in centimeters first, then change to meters (100 cm = 1 m).",
-     "src": "Lesson 1, Practical (Q6)"
+     "src": "Lesson 1, Practical (Q6)",
+     "t": "XSI2Mi4xIls="
     },
     {
      "obj": "Plaster foot on tiptoe",
@@ -293,7 +294,8 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "First find the speed. Then time = distance ÷ speed.",
-     "src": "Lesson 15, Part 2 (Q4)"
+     "src": "Lesson 15, Part 2 (Q4)",
+     "t": "XSIwMDIiWw=="
     }
    ]
   },
@@ -388,7 +390,8 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "Gradient = change in distance ÷ change in time.",
-     "src": "Lesson 5, Section 2 (Q2)"
+     "src": "Lesson 5, Section 2 (Q2)",
+     "t": "XSI1Ils="
     }
    ]
   },
@@ -456,7 +459,7 @@ window.GAME_DATA = {
      "y": 73.6,
      "w": 24.4,
      "h": 16,
-     "q": "Runner A ran 20 m in 16.7 s. Runner B ran 10 m in 10.1 s. Who was faster?",
+     "q": "Runner A ran 20 m in 16.7 s. What was Runner A’s speed in m/s? (1 decimal place)",
      "c": [
       "B, because 10.1 s is a smaller time",
       "A: about 1.2 m/s compared with B’s 1.0 m/s",
@@ -465,7 +468,9 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "You need distance AND time. Work out each speed.",
-     "src": "Lesson 7, Section 1 (Q1)"
+     "src": "Lesson 7, Section 1 (Q1)",
+     "q0": "Runner A ran 20 m in 16.7 s. Runner B ran 10 m in 10.1 s. Who was faster?",
+     "t": "XSIyLjEiWw=="
     },
     {
      "obj": "Yellow multimeter and probes",
@@ -551,7 +556,7 @@ window.GAME_DATA = {
      "y": 71,
      "w": 18.4,
      "h": 17.6,
-     "q": "You stop a spinning egg with one fingertip and let go. It starts turning again by itself. What kind of egg is it?",
+     "q": "You stop a spinning egg with one fingertip and let go. It starts turning again by itself. Is it raw or boiled? (one word)",
      "c": [
       "Hard-boiled, because it is solid",
       "Raw: the liquid inside keeps moving (inertia) and turns the shell again",
@@ -560,7 +565,9 @@ window.GAME_DATA = {
      ],
      "k": 48,
      "hint": "What inside the egg could still be moving after you stop the shell?",
-     "src": "Lesson 8, Section 3 (Motion Tricks, egg spin)"
+     "src": "Lesson 8, Section 3 (Motion Tricks, egg spin)",
+     "q0": "You stop a spinning egg with one fingertip and let go. It starts turning again by itself. What kind of egg is it?",
+     "t": "XSJ3YXIiWw=="
     },
     {
      "obj": "Tray of grey sludge",
@@ -628,7 +635,7 @@ window.GAME_DATA = {
      "y": 47.5,
      "w": 11,
      "h": 15.6,
-     "q": "Use the reactivity series. (a) Magnesium is put in copper sulfate. (b) Copper is put in zinc sulfate. What happens?",
+     "q": "Magnesium is put in blue copper sulfate solution. Which metal appears as a brown coating? (one word)",
      "c": [
       "(a) Magnesium displaces copper. (b) No reaction",
       "(a) No reaction. (b) Copper displaces zinc",
@@ -637,7 +644,9 @@ window.GAME_DATA = {
      ],
      "k": 11,
      "hint": "A metal HIGHER in the series displaces a metal LOWER down.",
-     "src": "Lesson 12, Section 3 (Q4)"
+     "src": "Lesson 12, Section 3 (Q4)",
+     "q0": "Use the reactivity series. (a) Magnesium is put in copper sulfate. (b) Copper is put in zinc sulfate. What happens?",
+     "t": "XSJyZXBwb2MiWw=="
     },
     {
      "obj": "Sensor pad and coiled cable",
@@ -674,6 +683,84 @@ window.GAME_DATA = {
      "k": 11,
      "hint": "Which metal is more reactive, zinc or iron?",
      "src": "Lesson 15, Part 1 (Q3)"
+    }
+   ]
+  },
+  {
+   "name": "The Vault",
+   "lessons": "Every stop",
+   "image": "assets/MYP5/room-06-bionics.jpg",
+   "vault": true,
+   "w": "U0FH",
+   "clue": {
+    "label": "Mannequin hand with a pencil strip",
+    "x": 85.4,
+    "y": 58,
+    "w": 12.4,
+    "h": 26,
+    "text": "The cure is sealed in here. Each lock links two stops of the term. Read carefully: one wrong answer costs 30 seconds."
+   },
+   "door": {
+    "label": "Final exit door and keypad",
+    "x": 68.9,
+    "y": 22,
+    "w": 16,
+    "h": 48
+   },
+   "qs": [
+    {
+     "obj": "Vault lock 1",
+     "card": "Vault lock 1",
+     "x": 46,
+     "y": 30.5,
+     "w": 20.5,
+     "h": 25.5,
+     "q": "A tortoise walks steadily at 0.5 m/s. The hare runs 100 m in 10 s, then naps for 120 s. Over the whole 130 s, who has the higher AVERAGE speed?",
+     "c": [
+      "The hare: about 0.77 m/s, against 0.5 m/s",
+      "The tortoise: 0.5 m/s, against 0.3 m/s",
+      "The hare: 10 m/s, against 0.5 m/s",
+      "They are exactly the same"
+     ],
+     "k": 11,
+     "hint": "Average speed = total distance ÷ total time, and the nap counts as time.",
+     "src": "Lessons 4 and 6: speed and the great race"
+    },
+    {
+     "obj": "Vault lock 2",
+     "card": "Vault lock 2",
+     "x": 17,
+     "y": 47.5,
+     "w": 11,
+     "h": 15.6,
+     "q": "Your hand-span is 18 cm. A corridor is 50 hand-spans long, and you walk it in 6 s. What is your speed?",
+     "c": [
+      "1.5 m/s",
+      "150 m/s",
+      "0.15 m/s",
+      "3 m/s"
+     ],
+     "k": 11,
+     "hint": "First turn hand-spans into meters (50 × 0.18 m), then divide by the time.",
+     "src": "Lessons 1 and 3: units, then speed"
+    },
+    {
+     "obj": "Vault lock 3",
+     "card": "Vault lock 3",
+     "x": 58.9,
+     "y": 72,
+     "w": 21.5,
+     "h": 11,
+     "q": "A toy car is pushed and rolls 4 m in 2 s, then slows down and stops. Which statement is correct?",
+     "c": [
+      "Its average speed was 2 m/s; friction is an unbalanced force that slowed it",
+      "Its speed was 8 m/s; it stopped because the push ran out",
+      "Its speed was 2 m/s; the forces were balanced the whole time",
+      "Its speed was 0.5 m/s; friction made it speed up"
+     ],
+     "k": 11,
+     "hint": "Speed = distance ÷ time. Something only slows down if a force acts against its motion.",
+     "src": "Lessons 3 and 8: speed and forces"
     }
    ]
   }
